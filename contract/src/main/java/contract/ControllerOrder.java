@@ -7,12 +7,18 @@ package contract;
  */
 public enum ControllerOrder {
 
-	/** The English. */
-	English,
-	/** The French. */
-	Francais,
-	/** The Deutch. */
-	Deutsch,
-	/** The Indonesia. */
-	Indonesia
+	/** The Up button. */
+	Up,
+	/** The Down button. */
+	Down,
+	/** The Right button. */
+	Right,
+	/** The Left button. */
+	Left,
+	/** The Enter button. */
+	Enter,
+	/** The Escape button. */
+	Escape,
+	/** The Else button. */
+	Else,
 }

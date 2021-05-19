@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.Observable;
 
 import contract.IModel;
+import contract.State;
 import entity.HelloWorld;
 
 /**
@@ -15,6 +16,8 @@ public final class Model extends Observable implements IModel {
 
 	/** The helloWorld. */
 	private HelloWorld helloWorld;
+	
+	private State state;
 
 	/**
 	 * Instantiates a new model.
@@ -82,4 +85,13 @@ public final class Model extends Observable implements IModel {
 	public Observable getObservable() {
 		return this;
 	}
+	
+	public State getState() {
+		return this.state;
+	}
+
+	public void setState(State state) {
+		this.state = state;
+	}
+
 }

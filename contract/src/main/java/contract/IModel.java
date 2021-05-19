@@ -32,4 +32,18 @@ public interface IModel {
 	 * @return the observable
 	 */
 	Observable getObservable();
+	
+	/**
+	 * Sets the  state.
+	 *
+	 * @param State
+	 *          the State
+	 */
+	public void setState(State state);
+	
+	/**
+	 * gets the state.
+	 * @return the  state
+	 */
+	public State getState();
 }
