@@ -5,7 +5,7 @@ import java.util.Observable;
 
 import contract.IModel;
 import contract.State;
-import entity.HelloWorld;
+import entity.Game;
 
 /**
  * The Class Model.
@@ -15,7 +15,7 @@ import entity.HelloWorld;
 public final class Model extends Observable implements IModel {
 
 	/** The helloWorld. */
-	private HelloWorld helloWorld;
+	private Game game;
 	
 	private State state;
 
@@ -23,7 +23,7 @@ public final class Model extends Observable implements IModel {
 	 * Instantiates a new model.
 	 */
 	public Model() {
-		this.helloWorld = new HelloWorld();
+		this.game = new Game();
 	}
 
 	/**
@@ -36,7 +36,7 @@ public final class Model extends Observable implements IModel {
 	 *
 	 * @see contract.IModel#getMessage()
 	 */
-	public HelloWorld getHelloWorld() {
+	public Game getHelloWorld() {
 		return this.helloWorld;
 	}
 
@@ -46,7 +46,7 @@ public final class Model extends Observable implements IModel {
      * @param helloWorld
      *            the new hello world
      */
-	private void setHelloWorld(final HelloWorld helloWorld) {
+	private void setHelloWorld(final Game helloWorld) {
 		this.helloWorld = helloWorld;
 		this.setChanged();
 		this.notifyObservers();

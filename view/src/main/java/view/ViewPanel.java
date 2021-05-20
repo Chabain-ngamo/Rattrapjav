@@ -18,6 +18,7 @@ class ViewPanel extends JPanel implements Observer {
 	/** The Constant serialVersionUID. */
 	private static final long	serialVersionUID	= -998294702363713521L;
 
+	private static int time = 300;
 	/**
 	 * Instantiates a new view panel.
 	 *
