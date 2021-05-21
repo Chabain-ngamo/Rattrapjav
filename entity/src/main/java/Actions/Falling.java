@@ -17,7 +17,7 @@ public class Falling extends Actions<mobileElements>{
 	@Override
 	public void runStrategy() {
 		
-		Entity getNextEntity = me.getMap().getArrayMap()[me.getPositionX()][me.getPositionY()+1];
+		Entity getNextEntity = me.getGame().getArrayMap()[me.getPositionX()][me.getPositionY()+1];
 		final int bonusEnemyKilled = 4;
 		
 		if (getNextEntity instanceof Path) {
