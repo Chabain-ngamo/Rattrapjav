@@ -12,17 +12,9 @@ import entity.Game;
  *
  * @author Jean-Aymeric Diet
  */
-class DAOHelloWorld extends DAOEntity<Game> {
+class DAOGame extends DAOEntity<Game> {
 
-	/**
-	 * Instantiates a new DAO hello world.
-	 *
-	 * @param connection
-	 *          the connection
-	 * @throws SQLException
-	 *           the SQL exception
-	 */
-	public DAOHelloWorld(final Connection connection) throws SQLException {
+	public DAOGame(final Connection connection) throws SQLException {
 		super(connection);
 	}
 
@@ -66,47 +58,24 @@ class DAOHelloWorld extends DAOEntity<Game> {
 	 */
 	@Override
 	public Game find(final int id) {
-		Game helloWorld = new Game();
-
+		//HelloWorld helloWorld = new HelloWorld();
+		Game map = new Game();
+		
 		try {
-			final String sql = "{call helloworldById(?)}";
+			final String sql = "{call mapById(?)}";
 			final CallableStatement call = this.getConnection().prepareCall(sql);
 			call.setInt(1, id);
 			call.execute();
 			final ResultSet resultSet = call.getResultSet();
 			if (resultSet.first()) {
-				helloWorld = new Game(id, resultSet.getString("code"), resultSet.getString("message"));
+				map = new Game(id, resultSet.getString("levelContent"), resultSet.getInt("numberDiamondsNeeded"));
 			}
-			return helloWorld;
+			return map;
 		} catch (final SQLException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see model.DAOEntity#find(java.lang.String)
-	 */
-	@Override
-	public Game find(final String code) {
-		Game helloWorld = new Game();
-
-		try {
-			final String sql = "{call helloworldByCode(?)}";
-			final CallableStatement call = this.getConnection().prepareCall(sql);
-			call.setString(1, code);
-			call.execute();
-			final ResultSet resultSet = call.getResultSet();
-			if (resultSet.first()) {
-				helloWorld = new Game(resultSet.getInt("id"), code, resultSet.getString("message"));
-			}
-			return helloWorld;
-		} catch (final SQLException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
+	
 }

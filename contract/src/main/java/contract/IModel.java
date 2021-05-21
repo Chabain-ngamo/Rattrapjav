@@ -11,20 +11,15 @@ import entity.Game;
  */
 public interface IModel {
 
-	/**
-	 * Gets the hello world.
-	 *
-	 * @return the helloworld entity
-	 */
-	Game getHelloWorld();
+	Game getGame();
 
 	/**
-	 * Load the message.
+	 * Load the map.
 	 *
-	 * @param code
-	 *          the code
+	 * @param id
+	 *          the id of the map from the database
 	 */
-	void loadHelloWorld(String code);
+	void loadMap(int id);
 
 	/**
 	 * Gets the observable.
@@ -32,6 +27,17 @@ public interface IModel {
 	 * @return the observable
 	 */
 	Observable getObservable();
+	
+
+	/**
+	 * Notify observers.
+	 */
+	void modelNotify();
+	
+	/**
+	 * Execute methods in the model to load the game.
+	 */
+	void loop();
 	
 	/**
 	 * Sets the  state.

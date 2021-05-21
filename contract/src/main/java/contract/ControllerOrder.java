@@ -19,6 +19,20 @@ public enum ControllerOrder {
 	Enter,
 	/** The Escape button. */
 	Escape,
+	/** The first map */
+	Map1,
+	/** The second map */
+	Map2,
+	/** The third map */
+	Map3,
+	/** The fourth map */
+	Map4,
+	/** The fifth map */
+	Map5,
+	/** The sixth map */
+	Map6,
+	/** The seventh map */
+	Map7,
 	/** The Else button. */
 	Else,
 }

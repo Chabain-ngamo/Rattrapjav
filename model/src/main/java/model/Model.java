@@ -14,62 +14,70 @@ import entity.Game;
  */
 public final class Model extends Observable implements IModel {
 
-	/** The helloWorld. */
-	private Game game;
+	private Game map;
+	/** The number of levels */
+	private final static int numberOfLevels = 7;
 	
-	private State state;
-
 	/**
 	 * Instantiates a new model.
 	 */
 	public Model() {
-		this.game = new Game();
+		this.map = new Game();
 	}
 
 	/**
-     * Gets the hello world.
+     * Gets the map.
      *
-     * @return the hello world
+     * @return map
      */
 	/*
 	 * (non-Javadoc)
 	 *
 	 * @see contract.IModel#getMessage()
 	 */
-	public Game getHelloWorld() {
-		return this.helloWorld;
+	public Game getGame() {
+		return this.map;
 	}
 
 	/**
-     * Sets the hello world.
+     * Sets the map
      *
-     * @param helloWorld
-     *            the new hello world
+     * @param map
+     *            the new map
      */
-	private void setHelloWorld(final Game helloWorld) {
-		this.helloWorld = helloWorld;
-		this.setChanged();
-		this.notifyObservers();
+	private void setMap(final Game map) {
+		this.map = map;
+		this.modelNotify();
 	}
 
 	/**
-     * Load hello world.
+     * Load the map
      *
-     * @param code
-     *            the code
+     * @param id
+     *            the id of the map
      */
 	/*
 	 * (non-Javadoc)
 	 *
 	 * @see contract.IModel#getMessage(java.lang.String)
 	 */
-	public void loadHelloWorld(final String code) {
-		try {
-			final DAOHelloWorld daoHelloWorld = new DAOHelloWorld(DBConnection.getInstance().getConnection());
-			this.setHelloWorld(daoHelloWorld.find(code));
-		} catch (final SQLException e) {
-			e.printStackTrace();
+	public void loadMap(final int id) throws IndexOutOfBoundsException {
+		
+		if(id <= numberOfLevels) {
+			try {
+				final DAOGame daoGame = new DAOGame(DBConnection.getInstance().getConnection());
+				this.setGame(daoGame.find(id));
+			} catch (final SQLException e) {
+				e.printStackTrace();
+			}
+		} else {
+				throw new IndexOutOfBoundsException("Incorrect id !");
 		}
+	}
+
+	private void setGame(Game find) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	/**
@@ -86,12 +94,36 @@ public final class Model extends Observable implements IModel {
 		return this;
 	}
 	
-	public State getState() {
-		return this.state;
+	/**
+	 * Notify observers.
+	 */
+	public void modelNotify() {
+		setChanged();
+		notifyObservers();
+	}
+	
+	/**
+	 * The loop method.
+	 * Executes the map loop and notify observers.
+	 */
+	public void loop() {
+
+		if(this.getGame().getNumberOfDiamondsNeeded() != 0) {
+			this.getGame().loop();
+			this.modelNotify();
+		}
 	}
 
+	@Override
 	public void setState(State state) {
-		this.state = state;
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public State getState() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

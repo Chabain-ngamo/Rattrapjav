@@ -29,6 +29,7 @@ public final class View implements IView, Runnable {
 		this.viewFrame = new ViewFrame(model);
 		SwingUtilities.invokeLater(this);
 	}
+	
 
 	/**
 	 * Key code to controller order.
@@ -51,6 +52,20 @@ public final class View implements IView, Runnable {
 			return ControllerOrder.Escape;
 		case KeyEvent.VK_ENTER:
 			return ControllerOrder.Enter;
+		case KeyEvent.VK_1:
+			return ControllerOrder.Map1;
+		case KeyEvent.VK_2:
+			return ControllerOrder.Map2;
+		case KeyEvent.VK_3:
+			return ControllerOrder.Map3;
+		case KeyEvent.VK_4:
+			return ControllerOrder.Map4;
+		case KeyEvent.VK_5:
+			return ControllerOrder.Map5;
+		case KeyEvent.VK_6:
+			return ControllerOrder.Map6;
+		case KeyEvent.VK_7:
+			return ControllerOrder.Map7;
 		default:
 			return ControllerOrder.Else;
 		}
@@ -59,9 +74,8 @@ public final class View implements IView, Runnable {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see contract.IView#printMessage(java.lang.String)
-	 */
 	public void printMessage(final String message) {
+		
 		this.viewFrame.printMessage(message);
 	}
 
@@ -71,7 +85,7 @@ public final class View implements IView, Runnable {
 	 * @see java.lang.Runnable#run()
 	 */
 	public void run() {
-		this.viewFrame.setVisible(true);
+			this.viewFrame.setVisible(true);
 	}
 
 	/**
@@ -82,5 +96,12 @@ public final class View implements IView, Runnable {
 	 */
 	public void setController(final IController controller) {
 		this.viewFrame.setController(controller);
+	}
+
+
+	@Override
+	public void printMessage(String message) {
+		// TODO Auto-generated method stub
+		
 	}
 }
