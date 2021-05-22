@@ -1,18 +1,20 @@
 package elements;
 
-import java.io.IOException;
-
 import entity.Sprite;
+
+/**
+ * The Path class.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
+ *
+ */
 
 public class Path extends motionlessElements {
 	
-	private static final Sprite sprite = new Sprite('u',"Background.png");
+	private static final Sprite sprite = new Sprite('u',"/sprites/settings/","Background.png");
 	static {
-		try {
-			sprite.loadImage();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		sprite.loadImage();
 	}
 	
 	

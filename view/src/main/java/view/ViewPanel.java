@@ -1,16 +1,16 @@
 package view;
 
+import java.io.IOException;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import javax.swing.JPanel;
+import javax.swing.*;
+import javax.swing.plaf.synth.ColorType;
 
 import contract.IModel;
 import elements.Avatar;
@@ -27,8 +27,7 @@ class ViewPanel extends JPanel implements Observer {
 
 	/** The view frame. */
 	private ViewFrame viewFrame;
-	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = -998294702363713521L;
+	private static final long serialVersionUID = -998294702363713521L ;
 	/** The counter until the end of the game */
 	private static int counter = 200;
 	/** The boolean to refresh some information only once */
@@ -37,6 +36,7 @@ class ViewPanel extends JPanel implements Observer {
 	private boolean isTimerStart = false;
 
 	public ViewPanel() {
+		
 	}
 
 	/**
@@ -98,14 +98,14 @@ class ViewPanel extends JPanel implements Observer {
 		final int width = this.getWidth();
 		final int height = this.getHeight();
 		final int timerResetValue = 200;
-		Game map = this.viewFrame.getModel().getGame();
-		Entity[][] loadMap = null;
+		Game game = this.viewFrame.getModel().getGame();
+		Entity[][] loadGame = null;
 		Avatar avatar = null;
 //		a = getWidth();
 //		b = getHeight();
-		if (map.getAvatar() != null) {
+		if (game.getAvatar() != null) {
 
-			loadMap = map.getArrayMap();
+			loadGame = game.getArrayGame();
 			avatar = this.viewFrame.getModel().getGame().getAvatar();
 			int playerPosX = this.viewFrame.getModel().getGame().getAvatar().getPositionX();
 			int playerPosY = this.viewFrame.getModel().getGame().getAvatar().getPositionY();
@@ -113,16 +113,16 @@ class ViewPanel extends JPanel implements Observer {
 			graphics.setFont(font);
 			if (counter != 0 && counter != -100) {
 
-				this.focusMapOnPlayer(graphics, width, height, playerPosX, playerPosY, scale, imageSize);
+				this.focusGameOnAvatar(graphics, width, height, playerPosX, playerPosY, scale, imageSize);
 
-				this.displayMap(graphics, width, height);
+				this.displayGame(graphics, width, height);
 				
 				if (isTimerStart == false) {
 					ViewPanel.startTimer();
 					this.isTimerStart = true;
 				}
 
-				this.reverseFocusOnScreenAndStats(graphics, scale, width, height, playerPosX, playerPosY, avatar, map, imageSize);
+				this.reverseFocusOnScreenAndStats(graphics, scale, width, height, playerPosX, playerPosY, avatar,game, imageSize);
 
 			} else {
 				graphics.clearRect(0, 0, width, height);
@@ -137,13 +137,9 @@ class ViewPanel extends JPanel implements Observer {
 
 		} else {
 			//graphics.clearRect(0, 0, width, height);
-			Sprite sprite = new Sprite('0', "menu.png");
-			try {
-			      sprite.loadImage();
-			      graphics.drawImage(sprite.getImage(), 0, 0, this.getWidth(), this.getHeight(), this);
-			    } catch (IOException e) {
-			      e.printStackTrace();
-			    }
+			Sprite sprite = new Sprite('0',"/sprites/settings/", "menu.png");
+			sprite.loadImage();
+			  graphics.drawImage(sprite.getImage(), 0, 0, this.getWidth(), this.getHeight(), this);
 		}
 	}
 
@@ -173,18 +169,18 @@ class ViewPanel extends JPanel implements Observer {
 	 * @param width the width of the view
 	 * @param height the height of the view
 	 */
-	public void displayMap(Graphics graphics, int width, int height) {
+	public void displayGame(Graphics graphics, int width, int height) {
 
 		final int imageSize = 16;
 		final int numberOfLevels = 7;
-		Game map = this.viewFrame.getModel().getGame();
+		Game game = this.viewFrame.getModel().getGame();
 		IModel getModel = this.viewFrame.getModel();
-		Entity[][] loadMap = map.getArrayMap();
+		Entity[][] loadGame = game.getArrayGame();
 		Avatar avatar = this.viewFrame.getModel().getGame().getAvatar();
 		final int timerResetValue = 200;
-		for (int x = 0; x < map.getWidthMap(); x++) {
-			for (int y = 0; y < map.getHeightMap(); y++) {
-				graphics.drawImage(loadMap[x][y].getSprite().getImage(), x * imageSize, y * imageSize, this);
+		for (int x = 0; x < game.getWidthGame(); x++) {
+			for (int y = 0; y < game.getHeightGame(); y++) {
+				graphics.drawImage(loadGame[x][y].getSprite().getImage(), x * imageSize, y * imageSize, this);
 			}
 		}
 	
@@ -193,13 +189,13 @@ class ViewPanel extends JPanel implements Observer {
 			hasBeenNotifiedToStop = true;
 			graphics.clearRect(0, 0, width, height);
 			this.viewFrame.printMessage("You died ! Try again...");
-			getModel.loadMap(map.getId());
+			getModel.loadGame(game.getId());
 			hasBeenNotifiedToStop = false;
 		}
 
 		if (avatar.getIsWin() && hasBeenNotifiedToStop == false) {
-			if (map.getId() < numberOfLevels) {
-				getModel.loadMap(map.getId() + 1);
+			if (game.getId() < numberOfLevels) {
+				getModel.loadGame(game.getId() + 1);
 				counter = timerResetValue;
 			} else {
 				hasBeenNotifiedToStop = true;
@@ -222,7 +218,7 @@ class ViewPanel extends JPanel implements Observer {
 	 * @param scale the zoom used to focus on player
 	 * @param imageSize the sprite size
 	 */
-	public void focusMapOnPlayer(Graphics graphics, int width, int height, int playerPosX, int playerPosY, double scale, int imageSize) {
+	public void focusGameOnAvatar(Graphics graphics, int width, int height, int playerPosX, int playerPosY, double scale, int imageSize) {
 
 		graphics.clearRect(0, 0, width, height);
 			graphics.translate(0,
@@ -244,7 +240,7 @@ class ViewPanel extends JPanel implements Observer {
 	 * @param imageSize the sprite size
 	 */
 	public void reverseFocusOnScreenAndStats(Graphics graphics, double scale, int width, int height, int playerPosX,
-			int playerPosY, Avatar avatar, Game map, int imageSize) {
+			int playerPosY, Avatar avatar, Game game, int imageSize) {
 
 		final int xStartStatsValues = width + 30;
 		final int yStartStatsValues = 0;
@@ -259,10 +255,10 @@ class ViewPanel extends JPanel implements Observer {
 		graphics.drawString("Remaining time : " + counter, 590, 315);
 		//graphics.drawString(String.valueOf("Diamond Counter : " + player.getDiamondsCounter()), 590, 350);
 		graphics.setColor(Color.RED);
-		graphics.drawString(String.valueOf("Number needed : " + map.getNumberOfDiamondsNeeded()), 590,
+		graphics.drawString(String.valueOf("Number needed : " + game.getNumberOfDiamondsNeeded()), 590,
 				330);
 
-		if (avatar.getDiamondsCounter() >= map.getNumberOfDiamondsNeeded()) {
+		if (avatar.getDiamondsCounter() >= game.getNumberOfDiamondsNeeded()) {
 			graphics.setColor(Color.white);
 			graphics.fillRect(588, 290,120, 50);
 			graphics.setColor(Color.BLUE);

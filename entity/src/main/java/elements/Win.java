@@ -4,15 +4,19 @@ import java.io.IOException;
 
 import entity.Sprite;
 
+/**
+ * The Win class.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
+ *
+ */
+
 public class Win extends motionlessElements {
 	
-	private static final Sprite sprite = new Sprite('e',"Door.png");
+	private static final Sprite sprite = new Sprite('e',"/sprites/settings/","Door.png");
 	static {
-		try {
-			sprite.loadImage();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		sprite.loadImage();
 	}
 	
 	

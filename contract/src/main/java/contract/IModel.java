@@ -19,7 +19,7 @@ public interface IModel {
 	 * @param id
 	 *          the id of the map from the database
 	 */
-	void loadMap(int id);
+	void loadGame(int id);
 
 	/**
 	 * Gets the observable.

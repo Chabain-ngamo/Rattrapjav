@@ -1,18 +1,22 @@
 package elements;
 
-import java.io.IOException;
-
 import entity.Sprite;
+/**
+ * The Dirt abstract class.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
+ *
+ */
 
 public class Dirt extends motionlessElements{
 	
-	private static final Sprite sprite = new Sprite('t',"Dirt.png");
+	/**
+	 *  Sprite of a dirt.
+	 */
+	private static final Sprite sprite = new Sprite('t',"/sprites/settings/","Dirt.png");
 	static {
-		try {
-			sprite.loadImage();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		sprite.loadImage();
 	}
 	
 	

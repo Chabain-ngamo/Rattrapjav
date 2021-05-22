@@ -6,16 +6,21 @@ import Actions.EnemyMoveB;
 import entity.Game;
 import entity.Sprite;
 
+/**
+ * Enemy abstract.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
+ *
+ */
+
+
 public class Enemy extends mobileElements {
 	
 	
-	private static final Sprite spriteDown = new Sprite('i',"Enemy.png");
+	private static final Sprite spriteDown = new Sprite('i',"/sprites/settings/","Enemy.png");
 	static {
-		try {
-			spriteDown.loadImage();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		spriteDown.loadImage();
 	}
 	
 	/**
@@ -38,16 +43,6 @@ public class Enemy extends mobileElements {
 		return Enemy.spriteDown;
 	}
 
-	@Override
-	protected void setGame(Game game) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected Object getGame() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

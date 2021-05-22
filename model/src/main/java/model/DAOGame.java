@@ -59,7 +59,7 @@ class DAOGame extends DAOEntity<Game> {
 	@Override
 	public Game find(final int id) {
 		//HelloWorld helloWorld = new HelloWorld();
-		Game map = new Game();
+		Game game = new Game();
 		
 		try {
 			final String sql = "{call mapById(?)}";
@@ -68,9 +68,9 @@ class DAOGame extends DAOEntity<Game> {
 			call.execute();
 			final ResultSet resultSet = call.getResultSet();
 			if (resultSet.first()) {
-				map = new Game(id, resultSet.getString("levelContent"), resultSet.getInt("numberDiamondsNeeded"));
+				game = new Game(id, resultSet.getString("levelContent"), resultSet.getInt("numberDiamondsNeeded"));
 			}
-			return map;
+			return game;
 		} catch (final SQLException e) {
 			e.printStackTrace();
 		}

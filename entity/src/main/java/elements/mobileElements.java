@@ -1,10 +1,16 @@
 package elements;
 
-import java.io.IOException;
-
 import collisions.Collisions;
 import entity.Entity;
 import entity.Sprite;
+
+/**
+ * The MobileElements abstract class.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
+ *
+ */
 
 public abstract class mobileElements extends Entity{
 	
@@ -15,7 +21,7 @@ public abstract class mobileElements extends Entity{
 	protected boolean isAlive;
 	
 	/** The death sprite for mobile entities */
-	protected static final Sprite spriteDeath = new Sprite('y', "Death.png");
+	protected static final Sprite spriteDeath = new Sprite('y',"/sprites/settings/", "Death.png");
 	
 	
 	/**
@@ -42,42 +48,42 @@ public abstract class mobileElements extends Entity{
 
 		final int xpos = this.getPositionX();
 		final int ypos = this.getPositionY();
-		final Entity[][] loadArrayMap = this.getGame().getArrayMap();
+		final Entity[][] loadArrayGame = this.getGame().getArrayGame();
 		final Avatar avatar = this.getGame().getAvatar();
 		final Collisions getCollision = this.getGame().getCollisions();
 		boolean collision = false;
 		boolean isDiamond = false;
 		boolean moveStone = false;
-		boolean isPlayer = false;
+		boolean isAvatar = false;
 		
 			if(this instanceof Avatar) {
-				collision = getCollision.checkForCollisions(loadArrayMap,xpos + x, ypos + y);
-				isDiamond = getCollision.checkForDiamonds(loadArrayMap, xpos + x,ypos + y);
-				moveStone = getCollision.checkForStoneToMove(loadArrayMap, xpos + x, ypos + y, sideX);
+				collision = getCollision.checkForCollisions(loadArrayGame,xpos + x, ypos + y);
+				isDiamond = getCollision.checkForDiamonds(loadArrayGame, xpos + x,ypos + y);
+				moveStone = getCollision.checkForStoneToMove(loadArrayGame, xpos + x, ypos + y, sideX);
 			}else {
-				collision = getCollision.checkForPath(loadArrayMap,xpos + x, ypos + y);
-				isPlayer = getCollision.checkForPlayer(loadArrayMap, xpos + x, ypos + y);
+				collision = getCollision.checkForPath(loadArrayGame,xpos + x, ypos + y);
+				isAvatar = getCollision.checkForAvatar(loadArrayGame, xpos + x, ypos + y);
 			}
 				
 
 			this.loadImage(direction, this);
 			
 			if(moveStone) {
-				loadArrayMap[xpos + x + sideX][ypos + y] = loadArrayMap[xpos + x][ypos + y];
-				loadArrayMap[xpos + x][ypos + y] = loadArrayMap[xpos][ypos];
-				loadArrayMap[xpos][ypos] = new Path(xpos, ypos);
+				loadArrayGame[xpos + x + sideX][ypos + y] = loadArrayGame[xpos + x][ypos + y];
+				loadArrayGame[xpos + x][ypos + y] = loadArrayGame[xpos][ypos];
+				loadArrayGame[xpos][ypos] = new Path(xpos, ypos);
 				this.setPositionY(ypos + y);
 				this.setPositionX(xpos + x);
-				loadArrayMap[xpos + x + sideX][ypos + y].setPositionX(xpos + x + sideX);
+				loadArrayGame[xpos + x + sideX][ypos + y].setPositionX(xpos + x + sideX);
 			}
 			
 			if (!collision) {
 
-				if(isPlayer == true) {
+				if(isAvatar == true) {
 					avatar.setIsAlive(false);
 				} else {
-					loadArrayMap[xpos + x][ypos + y] = loadArrayMap[xpos][ypos];
-					loadArrayMap[xpos][ypos] = new Path(xpos, ypos);
+					loadArrayGame[xpos + x][ypos + y] = loadArrayGame[xpos][ypos];
+					loadArrayGame[xpos][ypos] = new Path(xpos, ypos);
 					this.setPositionY(ypos + y);
 					this.setPositionX(xpos + x);
 				}
@@ -92,8 +98,6 @@ public abstract class mobileElements extends Entity{
 			
 	}
 
-	protected abstract Object getGame();
-
 	/**
 	 * The loadImage method.
 	 * Allows the entity to change sprite on the map depending on its movements.
@@ -107,48 +111,23 @@ public abstract class mobileElements extends Entity{
 
 		case 'Z':
 			entity.setSprite(entity.getSpriteUp());
-			try {
-				entity.getSprite().loadImage();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			entity.getSprite().loadImage();
 			break;
 		case 'S':
 			entity.setSprite(entity.getSpriteDown());
-			try {
-				entity.getSprite().loadImage();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			entity.getSprite().loadImage();
 			break;
 		case 'Q':
 			entity.setSprite(entity.getSpriteTurnLeft());
-			try {
-				entity.getSprite().loadImage();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			entity.getSprite().loadImage();
 			break;
 		case 'D':
 			entity.setSprite(entity.getSpriteTurnRight());
-			try {
-				entity.getSprite().loadImage();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			entity.getSprite().loadImage();
 			break;
 		case 'X':
 			entity.setSprite(entity.getSpriteDeath());
-			try {
-				entity.getSprite().loadImage();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			entity.getSprite().loadImage();
 			break;
 		}
 	}

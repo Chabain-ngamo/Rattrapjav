@@ -14,7 +14,7 @@ import entity.Game;
  */
 public final class Model extends Observable implements IModel {
 
-	private Game map;
+	private Game game;
 	/** The number of levels */
 	private final static int numberOfLevels = 7;
 	
@@ -22,7 +22,7 @@ public final class Model extends Observable implements IModel {
 	 * Instantiates a new model.
 	 */
 	public Model() {
-		this.map = new Game();
+		this.game = new Game();
 	}
 
 	/**
@@ -36,7 +36,7 @@ public final class Model extends Observable implements IModel {
 	 * @see contract.IModel#getMessage()
 	 */
 	public Game getGame() {
-		return this.map;
+		return this.game;
 	}
 
 	/**
@@ -45,8 +45,8 @@ public final class Model extends Observable implements IModel {
      * @param map
      *            the new map
      */
-	private void setMap(final Game map) {
-		this.map = map;
+	private void setGame(final Game game) {
+		this.game = game;
 		this.modelNotify();
 	}
 
@@ -61,7 +61,7 @@ public final class Model extends Observable implements IModel {
 	 *
 	 * @see contract.IModel#getMessage(java.lang.String)
 	 */
-	public void loadMap(final int id) throws IndexOutOfBoundsException {
+	public void loadGame(final int id) throws IndexOutOfBoundsException {
 		
 		if(id <= numberOfLevels) {
 			try {
@@ -75,10 +75,9 @@ public final class Model extends Observable implements IModel {
 		}
 	}
 
-	private void setGame(Game find) {
-		// TODO Auto-generated method stub
+	
 		
-	}
+	
 
 	/**
      * Gets the observable.

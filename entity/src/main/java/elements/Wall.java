@@ -3,17 +3,21 @@ package elements;
 import java.io.IOException;
 
 import entity.Sprite;
+/**
+ * The Wall class.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
+ *
+ */
+
 
 public class Wall extends motionlessElements {
 	
-private static final Sprite sprite = new Sprite('q',"Wall.png");
+private static final Sprite sprite = new Sprite('q',"/sprites/settings/","Wall.png");
 	
 	static {
-		try {
-			sprite.loadImage();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		sprite.loadImage();
 	}
 
 	/**

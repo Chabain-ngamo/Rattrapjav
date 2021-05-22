@@ -3,6 +3,14 @@ package Actions;
 import elements.mobileElements;
 import entity.Entity;
 
+/**
+ * The Actions class.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
+ *
+ */
+
 public abstract class Actions <T extends Entity>{
 	
 	/** The mobile element concerned by the strategy */

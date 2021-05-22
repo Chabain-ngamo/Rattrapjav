@@ -10,12 +10,20 @@ import elements.Wall;
 import elements.Win;
 import elements.stone;
 
+/**
+ * The Game class.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
+ *
+ */
+
 public class Game extends Entity{
-	private String contentOfMap;
+	private String contentOfGame;
 	/** The id of the map */
 	private int id;
 	/** The bidimensional array containing the entities of the map */
-	private Entity[][] mapToChars;
+	private Entity[][] gameToChars;
 	/** The collisions handler of the map */
 	private Collisions collisions;
 	/** The number of diamonds needed to win the level */
@@ -30,9 +38,9 @@ public class Game extends Entity{
 	 */
 	public Game(final int id, final String content, int numberOfDiamondsNeeded) {
 		this.setId(id);
-		this.setContentOfMap(content);
+		this.setContentOfGame(content);
 		collisions = new Collisions();
-		this.createMapToChars();
+		this.createGameToChars();
 		this.numberOfDiamondsNeeded = numberOfDiamondsNeeded;
 	}
 
@@ -82,8 +90,8 @@ public class Game extends Entity{
 	 *
 	 * @return the content as a String.
 	 */
-	public String getContentOfMap() {
-		return this.contentOfMap;
+	public String getContentOfGame() {
+		return this.contentOfGame;
 	}
 
 	/**
@@ -91,16 +99,16 @@ public class Game extends Entity{
 	 *
 	 * @param content the new content
 	 */
-	public void setContentOfMap(final String content) {
-		this.contentOfMap = content;
+	public void setContentOfGame(final String content) {
+		this.contentOfGame = content;
 	}
 
 	/**
 	 * The getHeightMap method.
 	 * @return the height of the map
 	 */
-	public int getHeightMap() {
-		String[] mapFirstLength = getContentOfMap().split("\n");
+	public int getHeightGame() {
+		String[] mapFirstLength = getContentOfGame().split("\n");
 		return mapFirstLength.length;
 	}
 
@@ -108,8 +116,8 @@ public class Game extends Entity{
 	 * The getWidthMap method.
 	 * @return the width of the map
 	 */
-	public int getWidthMap() {
-		String[] mapFirstLength = getContentOfMap().split("\n");
+	public int getWidthGame() {
+		String[] mapFirstLength = getContentOfGame().split("\n");
 		return mapFirstLength[0].length() - 1;
 	}
 
@@ -133,43 +141,43 @@ public class Game extends Entity{
 	 * The createMapToChars method.
 	 * Transform the String content of the map into entities.
 	 */
-	public void createMapToChars() {
-		String map = this.getContentOfMap();
-		if (getHeightMap() >= 1 && getWidthMap() >= 1) {
-			this.mapToChars = new Entity[this.getWidthMap()][this.getHeightMap()];
-			for (int y = 0; y < getHeightMap(); y++) {
-				String[] finalMap = map.split("\n");
-				for (int x = 0; x < getWidthMap(); x++) {
-					switch (finalMap[y].toCharArray()[x]) {
+	public void createGameToChars() {
+		String game = this.getContentOfGame();
+		if (getHeightGame() >= 1 && getWidthGame() >= 1) {
+			this.gameToChars = new Entity[this.getWidthGame()][this.getHeightGame()];
+			for (int y = 0; y < getHeightGame(); y++) {
+				String[] finalGame = game.split("\n");
+				for (int x = 0; x < getWidthGame(); x++) {
+					switch (finalGame[y].toCharArray()[x]) {
 					case 'q':
-						mapToChars[x][y] = new Wall(x, y);
+						gameToChars[x][y] = new Wall(x, y);
 						break;
 					case 't':
-						mapToChars[x][y] = new Dirt(x, y);
+						gameToChars[x][y] = new Dirt(x, y);
 						break;
 					case 'y':
-						mapToChars[x][y] = new Avatar(x, y);
+						gameToChars[x][y] = new Avatar(x, y);
 						break;
 					case 'o':
-						mapToChars[x][y] = new stone(x, y);
+						gameToChars[x][y] = new stone(x, y);
 						break;
 					case 'i':
-						mapToChars[x][y] = new Enemy(x, y);
+						gameToChars[x][y] = new Enemy(x, y);
 						break;
 					case 'u':
-						mapToChars[x][y] = new Path(x, y);
+						gameToChars[x][y] = new Path(x, y);
 						break;
 					case 'x':
-						mapToChars[x][y] = new Diamond(x, y);
+						gameToChars[x][y] = new Diamond(x, y);
 						break;
 					case 'e':
-						mapToChars[x][y] = new Win(x, y);
+						gameToChars[x][y] = new Win(x, y);
 						break;
 					default:
 						break;
 					}
 
-					mapToChars[x][y].setGame(this);
+					gameToChars[x][y].setGame(this);
 
 				}
 			}
@@ -180,9 +188,9 @@ public class Game extends Entity{
 	 * The getArrayMap method.
 	 * @return the bidimensional array of the map with all the entities.
 	 */
-	public Entity[][] getArrayMap() {
+	public Entity[][] getArrayGame() {
 
-		return this.mapToChars;
+		return this.gameToChars;
 	}
 
 	/**
@@ -190,9 +198,9 @@ public class Game extends Entity{
 	 * @return the player of the map.
 	 */
 	public Avatar getAvatar() {
-		Entity[][] entity = this.getArrayMap();
-		for (int y = 0; y < getHeightMap(); y++) {
-			for (int x = 0; x < getWidthMap(); x++) {
+		Entity[][] entity = this.getArrayGame();
+		for (int y = 0; y < getHeightGame(); y++) {
+			for (int x = 0; x < getWidthGame(); x++) {
 				if (entity[x][y] instanceof Avatar) {
 					return (Avatar) entity[x][y];
 				}
@@ -219,9 +227,9 @@ public class Game extends Entity{
 	 * Launch the map's entities strategies.
 	 */
 	public void runStrategies() {
-		Entity[][] entity = this.getArrayMap();
-		for (int y = getHeightMap() -1; y >= 0; y--) {
-			for (int x = 0; x < getWidthMap(); x++) {
+		Entity[][] entity = this.getArrayGame();
+		for (int y = getHeightGame() -1; y >= 0; y--) {
+			for (int x = 0; x < getWidthGame(); x++) {
 				if(entity[x][y].getActions() != null) {
 					entity[x][y].getActions().runStrategy();
 				}
@@ -229,10 +237,6 @@ public class Game extends Entity{
 		}
 	}
 
-	@Override
-	protected void setGame(Game game) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 }

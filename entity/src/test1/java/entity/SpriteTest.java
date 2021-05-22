@@ -77,7 +77,7 @@ public class SpriteTest {
 	 */
 	@Test
 	public void testSetImageName() {
-		String expected ="diamonds.png";
+		String expected ="Diamond.png";
 		this.sprite.setImageName(expected);
 		Assert.assertEquals(expected, this.sprite.getImageName());
 	}

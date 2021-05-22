@@ -5,10 +5,13 @@ import java.util.Map;
 import Actions.Actions;
 
 /**
- * The Class Entity.
+ * The Entity class.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
  *
- * @author Jean-Aymeric Diet
  */
+
 public abstract class Entity {
 	
 	/** The sprite of the entity */
@@ -18,7 +21,7 @@ public abstract class Entity {
 	/** The y position of the entity */
 	private int positionY;
 	/** The map on which the entity is */
-	private Game map;
+	private Game game;
 	/** The boolean that indicates if the entity if falling or not */
 	private boolean isFallen;
 	/** The strategy of the entity */
@@ -45,8 +48,8 @@ public abstract class Entity {
 	 * Defines the map on which the entity evolves.
 	 * @param map the new map
 	 */
-	public void setMap(Game map) {
-		this.map = map;
+	public void setGame(Game game) {
+		this.game = game;
 	}
 	
 	/**
@@ -54,7 +57,7 @@ public abstract class Entity {
 	 * @return the map on which the entity evolves
 	 */
 	public Game getGame() {
-		return this.map;
+		return this.game;
 	}
 	
 	
@@ -178,6 +181,5 @@ public abstract class Entity {
 		this.actions = actions;
 	}
 
-	protected abstract void setGame(Game game);
-
+	
 }

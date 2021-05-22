@@ -3,26 +3,30 @@ package elements;
 import java.io.IOException;
 
 import entity.Sprite;
+/**
+ * The Avatar class.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
+ *
+ */
 
 public class Avatar extends mobileElements {
 	
-	/** The basic sprite for the player */
-	private static final Sprite spriteDown = new Sprite('y', "Rockford.png");
+	
+	/** The down sprite for the player */
+	private static final Sprite spriteDown = new Sprite('y',"/sprites/settings/", "Rockford.png");
 	/** The left sprite for the player */
-	private static final Sprite spriteTurnLeft = new Sprite('y', "Left_Rockford.png");
+	private static final Sprite spriteTurnLeft = new Sprite('y',"/sprites/settings/", "Left_Rockford.png");
 	/** The right sprite for the player */
-	private static final Sprite spriteTurnRight = new Sprite('y', "Right_Rockford.png");
+	private static final Sprite spriteTurnRight = new Sprite('y',"/sprites/settings/", "Right_Rockford.png");
 	/** The up sprite for the player */
-	private static final Sprite spriteUp = new Sprite('y', "Back_Rockford1.png");
+	private static final Sprite spriteUp = new Sprite('y',"/sprites/settings/", "Back_Rockford1.png");
 	/** The boolean that indicates if the player won */
 	private boolean isWin;
 
 	static {
-		try {
-			spriteDown.loadImage();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		spriteDown.loadImage();
 	}
 
 	/**
@@ -121,10 +125,10 @@ public class Avatar extends mobileElements {
 		int x = this.getPositionX();
 		int y = this.getPositionY();
 		
-		if(this.getGame().getArrayMap()[x+1][y] instanceof Enemy ||
-				this.getGame().getArrayMap()[x-1][y] instanceof Enemy ||
-				this.getGame().getArrayMap()[x][y+1] instanceof Enemy ||
-				this.getGame().getArrayMap()[x][y-1] instanceof Enemy) {
+		if(this.getGame().getArrayGame()[x+1][y] instanceof Enemy ||
+				this.getGame().getArrayGame()[x-1][y] instanceof Enemy ||
+				this.getGame().getArrayGame()[x][y+1] instanceof Enemy ||
+				this.getGame().getArrayGame()[x][y-1] instanceof Enemy) {
 			this.setIsAlive(false);
 			this.loadImage('X', this);
 			
@@ -137,10 +141,6 @@ public class Avatar extends mobileElements {
 		}		
 	}
 	
-	private Object getGame() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	/**
 	 * The didPlayerWin method.
@@ -167,9 +167,9 @@ public class Avatar extends mobileElements {
 		int x = this.getPositionX();
 		int y = this.getPositionY();
 
-		if(this.getGame().getArrayMap()[x+sideX][y+sideY] instanceof Win && this.getDiamondsCounter() >= numberOfDiamondsNeeded) {
-			this.getGame().getArrayMap()[x+sideX][y+sideY] = this.getGame().getArrayMap()[x][y];
-			this.getGame().getArrayMap()[x][y] = new Path(x,y);
+		if( this.getGame().getArrayGame()[x+sideX][y+sideY] instanceof Win && this.getDiamondsCounter() >= numberOfDiamondsNeeded) {
+			this.getGame().getArrayGame()[x+sideX][y+sideY] = this.getGame().getArrayGame()[x][y];
+			this.getGame().getArrayGame()[x][y] = new Path(x,y);
 			this.setIsWin(true);
 		}
 	}

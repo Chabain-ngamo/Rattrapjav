@@ -2,6 +2,15 @@ package Actions;
 
 import elements.Enemy;
 
+/**
+ * The EnnemyMoveB class.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
+ *
+ */
+
+
 public class EnemyMoveB extends Actions<Enemy>{
 	
 private Enemy me = null;

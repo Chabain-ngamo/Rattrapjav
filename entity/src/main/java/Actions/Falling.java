@@ -7,6 +7,15 @@ import elements.mobileElements;
 import entity.Entity;
 import entity.Game;
 
+/**
+ * The Failling class.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
+ *
+ */
+
+
 public class Falling extends Actions<mobileElements>{
 	
 	public Falling(mobileElements me) {
@@ -17,12 +26,12 @@ public class Falling extends Actions<mobileElements>{
 	@Override
 	public void runStrategy() {
 		
-		Entity getNextEntity = me.getGame().getArrayMap()[me.getPositionX()][me.getPositionY()+1];
+		Entity getNextEntity = me.getGame().getArrayGame()[me.getPositionX()][me.getPositionY()+1];
 		final int bonusEnemyKilled = 4;
 		
 		if (getNextEntity instanceof Path) {
-			me.getMap().getArrayMap()[me.getPositionX()][me.getPositionY()+1] = me;
-			me.getMap().getArrayMap()[me.getPositionX()][me.getPositionY()] = new Path(me.getPositionX(), me.getPositionY());
+			me.getGame().getArrayGame()[me.getPositionX()][me.getPositionY()+1] = me;
+			me.getGame().getArrayGame()[me.getPositionX()][me.getPositionY()] = new Path(me.getPositionX(), me.getPositionY());
 			me.setIsFallen(true);
 			me.setPositionY(me.getPositionY()+1);
 		} else if (getNextEntity instanceof Avatar && me.getIsFallen()){
@@ -31,8 +40,8 @@ public class Falling extends Actions<mobileElements>{
 		} else if(getNextEntity instanceof Enemy && me.getIsFallen()) {
 			
 			((Enemy)getNextEntity).setIsAlive(false);
-			me.getMap().getArrayMap()[me.getPositionX()][me.getPositionY()+1] = new Path(me.getPositionX(), me.getPositionY());
-			me.getMap().getAvatar().increaseDiamondsCounter(bonusEnemyKilled);
+			me.getGame().getArrayGame()[me.getPositionX()][me.getPositionY()+1] = new Path(me.getPositionX(), me.getPositionY());
+			me.getGame().getAvatar().increaseDiamondsCounter(bonusEnemyKilled);
 		} else {
 			me.setIsFallen(false);
 		}

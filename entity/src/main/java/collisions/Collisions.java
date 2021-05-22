@@ -9,6 +9,14 @@ import elements.Win;
 import elements.stone;
 import entity.Entity;
 
+/**
+ * The Collisions class.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
+ *
+ */
+
 public class Collisions {
 	
 	public Collisions() {
@@ -61,7 +69,7 @@ public class Collisions {
 	 * @return a boolean that indicates if there is a player near the entity.
 	 */
 	
-	public boolean checkForPlayer(Entity[][] entity, int x, int y) {
+	public boolean checkForAvatar(Entity[][] entity, int x, int y) {
 
 		if (entity[x][y] instanceof Avatar) {
 			return true;
