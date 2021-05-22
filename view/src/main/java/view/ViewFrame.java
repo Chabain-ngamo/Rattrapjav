@@ -24,6 +24,20 @@ class ViewFrame extends JFrame implements KeyListener {
 	private IController controller;
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -697358409737458175L;
+	/** Sets "resume" as a new Resume(). */
+	private MenuElement resume = new Resume("RESUME", windowWidth/8, 100);
+	/** Sets "mainMenu" as a new MainMenu(). */
+	private MenuElement mainMenu = new MainMenu("MAIN MENU", windowWidth/8, 100);
+	/** Sets "quitGame" as a new QuitGame(). */
+	private MenuElement quitGame = new QuitGame("QUIT GAME", windowWidth/8, 100);
+	/** Sets the "ArrayList&lt;MenuElement&gt; pauseElements" as a new ArrayList&lt;MenuElement&gt;(). */
+	private ArrayList<MenuElement> pauseElements = new ArrayList<MenuElement>();
+	/** Sets the "play" in MenuElement as a new Play(). */
+	private MenuElement play = new Play("PLAY", windowWidth/8, 100);
+	/** Sets the "quitGame2" in MenuElement as a new QuitGame2(). */
+	private MenuElement quitGame2 = new QuitGame("QUIT GAME", windowWidth/8, 100);
+	/** Sets the "ArrayList&lt;MenuElement&gt; mainMenuElements" as a new ArrayList&lt;MenuElement&gt;.*/
+	private ArrayList<MenuElement> mainMenuElements = new ArrayList<MenuElement>();
 	
 	/**
 	 * Instantiates a new view frame.
@@ -63,11 +77,11 @@ class ViewFrame extends JFrame implements KeyListener {
 	 * Instantiates a new view frame.
 	 *
 	 * @param model the model
-	 * @param title the title
+	 * @param title the title/
 	 * @param gc    the gc
 	 */
 	public ViewFrame(final IModel model, final String title, final GraphicsConfiguration gc) {
-		super(title, gc);
+		super(/*title,*/ gc);
 		this.buildViewFrame(model);
 	}
 

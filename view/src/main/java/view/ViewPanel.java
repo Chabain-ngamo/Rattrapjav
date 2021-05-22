@@ -137,7 +137,7 @@ class ViewPanel extends JPanel implements Observer {
 
 		} else {
 			//graphics.clearRect(0, 0, width, height);
-			Sprite sprite = new Sprite('0',"/sprites/settings/", "menu.png");
+			Sprite sprite = new Sprite('0',"/sprites/settings/", "menu.jpeg");
 			sprite.loadImage();
 			  graphics.drawImage(sprite.getImage(), 0, 0, this.getWidth(), this.getHeight(), this);
 		}

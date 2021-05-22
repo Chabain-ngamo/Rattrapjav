@@ -18,6 +18,9 @@ public final class View implements IView, Runnable {
 
 	/** The frame. */
 	private final ViewFrame viewFrame;
+	
+	/** The model. */
+	private IModel model;
 
 	/**
 	 * Instantiates a new view.
@@ -27,9 +30,16 @@ public final class View implements IView, Runnable {
 	 */
 	public View(final IModel model) {
 		this.viewFrame = new ViewFrame(model);
+		this.setModel(model);
 		SwingUtilities.invokeLater(this);
 	}
 	
+
+	private void setModel(IModel model) {
+		this.model=model;
+		
+	}
+
 
 	/**
 	 * Key code to controller order.
@@ -73,7 +83,7 @@ public final class View implements IView, Runnable {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 */
 	public void printMessage(final String message) {
 		
 		this.viewFrame.printMessage(message);
@@ -99,9 +109,4 @@ public final class View implements IView, Runnable {
 	}
 
 
-	@Override
-	public void printMessage(String message) {
-		// TODO Auto-generated method stub
-		
-	}
 }

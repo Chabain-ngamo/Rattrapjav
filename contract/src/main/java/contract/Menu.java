@@ -9,6 +9,8 @@ public enum Menu {
 	/** Quits the game */
 	Quitgame, 
 	/** Goes to the pause menu */
-	Pausemenu,
+	Mainmenu,
+	/** No action */
+	Nop, 
 
 }
