@@ -8,7 +8,7 @@ package contract;
 public enum ControllerOrder {
 
 	/** The Up button. */
-	Maiva,
+	up,
 	/** The Down button. */
 	Down,
 	/** The Right button. */
