@@ -184,7 +184,7 @@ public final class Controller implements IController {
 			this.getModel().setState(State.Menu);
 			break;
 		case Quitgame:
-			
+			this.getModel().getGame().getAvatar().getSpriteDeath();
 			System.exit(0);
 			break;
 		default:
