@@ -180,7 +180,7 @@ public final class Controller implements IController {
 		case Resume:
 			this.getModel().setState(State.Playing);
 			break;
-		case Pausemenu:
+		case Mainmenu:
 			this.getModel().setState(State.Menu);
 			break;
 		case Quitgame:

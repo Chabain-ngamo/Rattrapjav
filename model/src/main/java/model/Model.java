@@ -17,6 +17,7 @@ public final class Model extends Observable implements IModel {
 	private Game game;
 	/** The number of levels */
 	private final static int numberOfLevels = 7;
+	private State state;
 	
 	/**
 	 * Instantiates a new model.
@@ -121,8 +122,8 @@ public final class Model extends Observable implements IModel {
 
 	@Override
 	public State getState() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return this.state;
 	}
 
 }

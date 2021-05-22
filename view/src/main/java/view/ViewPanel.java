@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Timer;
@@ -27,6 +28,15 @@ class ViewPanel extends JPanel implements Observer {
 
 	/** The view frame. */
 	private ViewFrame viewFrame;
+	/** The Background image */
+	private Image backgr;
+	/** The Main Menu Background image */
+	private Image mainMenuBackgr;
+	private static int squareSize = ViewFrame.getSquaresize();
+	private static int viewLength = ViewFrame.getViewLength();
+	private static int viewWidth = ViewFrame.getViewWidth();
+	
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -998294702363713521L ;
 	/** The counter until the end of the game */
 	private static int counter = 200;
@@ -36,7 +46,7 @@ class ViewPanel extends JPanel implements Observer {
 	private boolean isTimerStart = false;
 
 	public ViewPanel() {
-		
+		this.setViewFrame(new ViewFrame());	
 	}
 
 	/**
@@ -141,6 +151,24 @@ class ViewPanel extends JPanel implements Observer {
 			sprite.loadImage();
 			  graphics.drawImage(sprite.getImage(), 0, 0, this.getWidth(), this.getHeight(), this);
 		}
+		switch(this.getViewFrame().getModel().getState()) {
+		/** Pauses the view g.*/
+		case Pause:
+			//this.pauseView(graphics);
+			break;
+		/** Plays the view g.*/
+		case Playing:
+			this.displayGame( graphics, width, height);
+			break;
+		/** Ends the view g.*/
+		case End:
+			this.displayGame( graphics, width, height);
+			break;
+		/** Shows menu on the view g.*/
+		case Menu:
+			//this.menuView(graphics);
+			break;
+		}	
 	}
 
 	/**
@@ -149,7 +177,7 @@ class ViewPanel extends JPanel implements Observer {
 	 * 
 	 */
 	public static void startTimer() { // This is a timer
-		ViewPanel drawTimer = new ViewPanel();
+		//ViewPanel drawTimer = new ViewPanel();
 		TimerTask timerTask = new TimerTask() {
 			@Override
 			public void run() {
@@ -172,7 +200,7 @@ class ViewPanel extends JPanel implements Observer {
 	public void displayGame(Graphics graphics, int width, int height) {
 
 		final int imageSize = 16;
-		final int numberOfLevels = 7;
+		final int numberOfLevels = 6;
 		Game game = this.viewFrame.getModel().getGame();
 		IModel getModel = this.viewFrame.getModel();
 		Entity[][] loadGame = game.getArrayGame();
@@ -225,6 +253,7 @@ class ViewPanel extends JPanel implements Observer {
 					(int) (-playerPosY * imageSize + 10));
 			((Graphics2D) graphics).scale(2, 2);
 	}
+	
 
 	/**
 	 * The reverseFocusOnScreenAndStats method.
@@ -242,11 +271,11 @@ class ViewPanel extends JPanel implements Observer {
 	public void reverseFocusOnScreenAndStats(Graphics graphics, double scale, int width, int height, int playerPosX,
 			int playerPosY, Avatar avatar, Game game, int imageSize) {
 
-		final int xStartStatsValues = width + 30;
+		/*final int xStartStatsValues = width + 30;
 		final int yStartStatsValues = 0;
 		final int xEndStatsValues = 240;
 		final int yEndStatsValues = 65;
-		final int xStartStatsDisplay = width + 30;
+		final int xStartStatsDisplay = width + 30;*/
 		graphics.setColor(Color.white);
 		graphics.fillRect(588, 290,120, 50);
 		 Font font = new Font("Courier", Font.BOLD, 8);
