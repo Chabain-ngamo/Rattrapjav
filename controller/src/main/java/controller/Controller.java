@@ -101,26 +101,20 @@ public final class Controller implements IController {
 	 */
 	public void orderPerform(final ControllerOrder controllerOrder) {
 		switch (controllerOrder) {
-		case Map1:
+		case Game1:
 			this.model.loadGame(1);
 			break;
-		case Map2:
+		case Game2:
 			this.model.loadGame(2);
 			break;
-		case Map3:
+		case Game3:
 			this.model.loadGame(3);
 			break;
-		case Map4:
+		case Game4:
 			this.model.loadGame(4);
 			break;
-		case Map5:
+		case Game5:
 			this.model.loadGame(5);
-			break;
-		case Map6:
-			this.model.loadGame(6);
-			break;
-		case Map7:
-			this.model.loadGame(7);
 			break;
 		case Up:
 			this.model.getGame().getAvatar().movePlayer('Z');

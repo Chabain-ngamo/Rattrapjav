@@ -14,7 +14,7 @@ import entity.Sprite;
 
 public class Win extends motionlessElements {
 	
-	private static final Sprite sprite = new Sprite('e',"/sprites/settings/","Door.png");
+	private static final Sprite sprite = new Sprite('W',"/sprites/settings/","Door.png");
 	static {
 		sprite.loadImage();
 	}

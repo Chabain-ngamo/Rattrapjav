@@ -16,7 +16,7 @@ public class Diamond extends mobileElements {
 	/**
 	 * Sprite of a diamond.
 	 */
-private static final Sprite sprite = new Sprite('x',"/sprites/settings/","Diamond.png");
+private static final Sprite sprite = new Sprite('D',"/sprites/settings/","Diamond.png");
 	
 	static {
 		sprite.loadImage();

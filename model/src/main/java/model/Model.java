@@ -16,7 +16,7 @@ public final class Model extends Observable implements IModel {
 
 	private Game game;
 	/** The number of levels */
-	private final static int numberOfLevels = 7;
+	private final static int numberOfLevels = 5;
 	private State state;
 	
 	/**

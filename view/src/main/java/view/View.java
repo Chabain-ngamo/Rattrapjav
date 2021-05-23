@@ -63,19 +63,15 @@ public final class View implements IView, Runnable {
 		case KeyEvent.VK_ENTER:
 			return ControllerOrder.Enter;
 		case KeyEvent.VK_1:
-			return ControllerOrder.Map1;
+			return ControllerOrder.Game1;
 		case KeyEvent.VK_2:
-			return ControllerOrder.Map2;
+			return ControllerOrder.Game2;
 		case KeyEvent.VK_3:
-			return ControllerOrder.Map3;
+			return ControllerOrder.Game3;
 		case KeyEvent.VK_4:
-			return ControllerOrder.Map4;
+			return ControllerOrder.Game4;
 		case KeyEvent.VK_5:
-			return ControllerOrder.Map5;
-		case KeyEvent.VK_6:
-			return ControllerOrder.Map6;
-		case KeyEvent.VK_7:
-			return ControllerOrder.Map7;
+			return ControllerOrder.Game5;
 		default:
 			return ControllerOrder.Else;
 		}

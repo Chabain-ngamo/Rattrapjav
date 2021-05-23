@@ -149,28 +149,28 @@ public class Game extends Entity{
 				String[] finalGame = game.split("\n");
 				for (int x = 0; x < getWidthGame(); x++) {
 					switch (finalGame[y].toCharArray()[x]) {
-					case 'q':
+					case 'w':
 						gameToChars[x][y] = new Wall(x, y);
 						break;
-					case 't':
+					case 'd':
 						gameToChars[x][y] = new Dirt(x, y);
 						break;
-					case 'y':
+					case 'a':
 						gameToChars[x][y] = new Avatar(x, y);
 						break;
-					case 'o':
+					case 's':
 						gameToChars[x][y] = new stone(x, y);
 						break;
-					case 'i':
+					case 'e':
 						gameToChars[x][y] = new Enemy(x, y);
 						break;
-					case 'u':
+					case 'p':
 						gameToChars[x][y] = new Path(x, y);
 						break;
-					case 'x':
+					case 'D':
 						gameToChars[x][y] = new Diamond(x, y);
 						break;
-					case 'e':
+					case 'W':
 						gameToChars[x][y] = new Win(x, y);
 						break;
 					default:

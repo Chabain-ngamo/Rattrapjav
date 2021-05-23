@@ -18,7 +18,7 @@ import entity.Sprite;
 public class Enemy extends mobileElements {
 	
 	
-	private static final Sprite spriteDown = new Sprite('i',"/sprites/settings/","Enemy.png");
+	private static final Sprite spriteDown = new Sprite('e',"/sprites/settings/","Enemy.png");
 	static {
 		spriteDown.loadImage();
 	}

@@ -15,13 +15,13 @@ public class Avatar extends mobileElements {
 	
 	
 	/** The down sprite for the player */
-	private static final Sprite spriteDown = new Sprite('y',"/sprites/settings/", "Rockford.png");
+	private static final Sprite spriteDown = new Sprite('a',"/sprites/settings/", "Rockford.png");
 	/** The left sprite for the player */
-	private static final Sprite spriteTurnLeft = new Sprite('y',"/sprites/settings/", "Left_Rockford.png");
+	private static final Sprite spriteTurnLeft = new Sprite('a',"/sprites/settings/", "Left_Rockford.png");
 	/** The right sprite for the player */
-	private static final Sprite spriteTurnRight = new Sprite('y',"/sprites/settings/", "Right_Rockford.png");
+	private static final Sprite spriteTurnRight = new Sprite('a',"/sprites/settings/", "Right_Rockford.png");
 	/** The up sprite for the player */
-	private static final Sprite spriteUp = new Sprite('y',"/sprites/settings/", "Back_Rockford1.png");
+	private static final Sprite spriteUp = new Sprite('a',"/sprites/settings/", "Back_Rockford1.png");
 	/** The boolean that indicates if the player won */
 	private boolean isWin;
 
