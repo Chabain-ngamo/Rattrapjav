@@ -14,7 +14,7 @@ import entity.Sprite;
 
 public class Wall extends motionlessElements {
 	
-private static final Sprite sprite = new Sprite('w',"/sprites/settings/","Wall.png");
+private static final Sprite sprite = new Sprite('w',"Wall.png");
 	
 	static {
 		sprite.loadImage();

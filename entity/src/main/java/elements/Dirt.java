@@ -14,7 +14,7 @@ public class Dirt extends motionlessElements{
 	/**
 	 *  Sprite of a dirt.
 	 */
-	private static final Sprite sprite = new Sprite('d',"/sprites/settings/","Dirt.png");
+	private static final Sprite sprite = new Sprite('d',"Dirt.png");
 	static {
 		sprite.loadImage();
 	}

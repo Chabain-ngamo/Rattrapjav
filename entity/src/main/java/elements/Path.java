@@ -12,7 +12,7 @@ import entity.Sprite;
 
 public class Path extends motionlessElements {
 	
-	private static final Sprite sprite = new Sprite('p',"/sprites/settings/","Background.png");
+	private static final Sprite sprite = new Sprite('p',"Background.png");
 	static {
 		sprite.loadImage();
 	}

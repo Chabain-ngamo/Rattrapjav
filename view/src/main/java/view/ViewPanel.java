@@ -147,29 +147,29 @@ class ViewPanel extends JPanel implements Observer {
 
 		} else {
 			//graphics.clearRect(0, 0, width, height);
-			Sprite sprite = new Sprite('0',"/sprites/settings/", "menu.jpeg");
+			Sprite sprite = new Sprite('0', "menu.jpeg");
 			sprite.loadImage();
 			  graphics.drawImage(sprite.getImage(), 0, 0, this.getWidth(), this.getHeight(), this);
 		}
-		switch(this.getViewFrame().getModel().getState()) {
+		//switch(this.getViewFrame().getModel().getState()) {
 		/** Pauses the view g.*/
-		case Pause:
+		//case Pause:
 			//this.pauseView(graphics);
-			break;
+			//break;
 		/** Plays the view g.*/
-		case Playing:
-			this.displayGame( graphics, width, height);
-			break;
+		//case Playing:
+			//this.displayGame( graphics, width, height);
+			//break;
 		/** Ends the view g.*/
-		case End:
-			this.displayGame( graphics, width, height);
-			break;
+		//case End:
+			///this.displayGame( graphics, width, height);
+			//break;
 		/** Shows menu on the view g.*/
-		case Menu:
+		//case Menu:
 			//this.menuView(graphics);
-			break;
+			//break;
 		}	
-	}
+	///}
 
 	/**
 	 * The startTimer method.

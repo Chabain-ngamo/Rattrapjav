@@ -21,7 +21,7 @@ public abstract class mobileElements extends Entity{
 	protected boolean isAlive;
 	
 	/** The death sprite for mobile entities */
-	protected static final Sprite spriteDeath = new Sprite('a',"/sprites/settings/", "Death.png");
+	protected static final Sprite spriteDeath = new Sprite('a', "Death.png");
 	
 	
 	/**

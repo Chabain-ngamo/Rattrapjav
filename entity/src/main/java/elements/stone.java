@@ -16,7 +16,7 @@ import entity.Sprite;
 
 public class stone extends mobileElements {
 	
-	private static final Sprite sprite = new Sprite('s',"/sprites/settings/","Stone.png");
+	private static final Sprite sprite = new Sprite('s',"Stone.png");
 	static {
 		sprite.loadImage();
 	}

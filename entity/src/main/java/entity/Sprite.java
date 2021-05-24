@@ -50,10 +50,9 @@ public class Sprite {
 	 * @param spritePath The Path of the sprite
 	 * @param imageName The Image Name
 	 */
-	public Sprite(char sprite_ref, String spritePath, String imageName) {
+	public Sprite(char sprite_ref, String imageName) {
 		this.setSprite_ref(sprite_ref);
 		this.setImageName(imageName);
-		this.setSpritePath(spritePath);
 	}
 
 	/**
@@ -78,9 +77,9 @@ public class Sprite {
 	 * Loads the image from the /Sprites folder.
 	 */
 	public void loadImage() {
-		String absolutePath = new File("").getAbsolutePath();
+		
 		try {
-			this.setImage(ImageIO.read(new File(absolutePath+this.getSpritePath()+this.getImageName())));
+			this.setImage(ImageIO.read(new File("sprite/"+this.getImageName())));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
