@@ -35,7 +35,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/media/Downloads/boulder dash/boulder-dash-master/boulder-dash-master/libs/jl1.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/media/Downloads/boulder dash/boulder-dash-master/boulder-dash-master/libs/scalatest_2.11-2.2.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
