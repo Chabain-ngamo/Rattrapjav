@@ -5,10 +5,11 @@ package view.menuElement;
 
 import contract.Menu;
 
-/**
- * @author media
- *
- */
+/* @author Maiva
+* @author Chabain
+*  @author Vladimir
+*
+*/
 public class QuitGame extends MenuElement {
 
 	public QuitGame(String content, int size, int alpha) {
@@ -20,7 +21,7 @@ public class QuitGame extends MenuElement {
 		if(this.isSelected()) {
 			return Menu.Quitgame;
 		}
-		return Menu.Nop;
+		return Menu.Else;
 	}
 
 }

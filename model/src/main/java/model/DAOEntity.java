@@ -7,10 +7,12 @@ import entity.Entity;
 
 /**
  * The Class DAOEntity.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
  *
- * @author Jean-Aymeric Diet
- *
- * @param <E>
+ */
+ /* @param <E>
  *          the element type
  */
 abstract class DAOEntity<E extends Entity> {

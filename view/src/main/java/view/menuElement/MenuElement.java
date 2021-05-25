@@ -5,8 +5,9 @@ package view.menuElement;
 
 import contract.Menu;
 
-/**
- * @author media
+/* @author Maiva
+ * @author Chabain
+ *  @author Vladimir
  *
  */
 public class MenuElement {
@@ -49,7 +50,7 @@ public class MenuElement {
 	}
 	
 	public Menu MenuRequest() {
-		return Menu.Nop;
+		return Menu.Else;
 	}
 
 }

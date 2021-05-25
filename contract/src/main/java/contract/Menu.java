@@ -1,5 +1,11 @@
 package contract;
 
+
+/* @author Maiva
+* @author Chabain
+*  @author Vladimir
+*
+*/
 public enum Menu {
 	
 	/** Play the game */
@@ -11,6 +17,6 @@ public enum Menu {
 	/** Goes to the pause menu */
 	Mainmenu,
 	/** No action */
-	Nop, 
+	Else, 
 
 }

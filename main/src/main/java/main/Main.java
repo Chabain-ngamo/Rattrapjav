@@ -1,19 +1,17 @@
-/**
-* @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
- */
+
 package main;
 
 import contract.ControllerOrder;
 import controller.Controller;
-import entity.AudioLoad;
 import model.Model;
 import view.View;
 
 /**
  * The Class Main.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
  *
- * @author Jean-Aymeric Diet
  */
 public abstract class Main {
 

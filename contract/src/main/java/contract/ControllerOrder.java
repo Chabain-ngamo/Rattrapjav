@@ -2,8 +2,10 @@ package contract;
 
 /**
  * The Enum ControllerOrder.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
  *
- * @author Jean-Aymeric Diet
  */
 public enum ControllerOrder {
 

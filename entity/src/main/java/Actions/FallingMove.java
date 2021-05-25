@@ -18,36 +18,36 @@ import entity.Entity;
 
 public class FallingMove extends Actions<mobileElements>{
 	
-	public FallingMove(mobileElements me) {
-		this.me = me;
+	public FallingMove(mobileElements enemy) {
+		this.enemy = enemy;
 	}
 
 	@Override
 	public void runActions() {
 		
-		Entity getNextEntity = me.getGame().getArrayGame()[me.getPositionX()][me.getPositionY()+1];
-		Entity getLeftEntity = me.getGame().getArrayGame()[me.getPositionX() - 1][me.getPositionY()];
-		Entity getLeftBottomEntity = me.getGame().getArrayGame()[me.getPositionX() - 1][me.getPositionY() +1];
-		Entity getRightEntity = me.getGame().getArrayGame()[me.getPositionX() + 1][me.getPositionY()];
-		Entity getRightBottomEntity = me.getGame().getArrayGame()[me.getPositionX() + 1][me.getPositionY() +1];
+		Entity getNextEntity = enemy.getGame().getArrayGame()[enemy.getPositionX()][enemy.getPositionY()+1];
+		Entity getLeftEntity = enemy.getGame().getArrayGame()[enemy.getPositionX() - 1][enemy.getPositionY()];
+		Entity getLeftBottomEntity = enemy.getGame().getArrayGame()[enemy.getPositionX() - 1][enemy.getPositionY() +1];
+		Entity getRightEntity = enemy.getGame().getArrayGame()[enemy.getPositionX() + 1][enemy.getPositionY()];
+		Entity getRightBottomEntity = enemy.getGame().getArrayGame()[enemy.getPositionX() + 1][enemy.getPositionY() +1];
 		final int bonusEnemyKilled = 4;
 		
 		if (getNextEntity instanceof Path) {
 			this.FallingMove(0, 1);
-		} else if (getNextEntity instanceof Avatar && me.getIsFallen()){
+		} else if (getNextEntity instanceof Avatar && enemy.getIsFallen()){
 			((Avatar)getNextEntity).setIsAlive(false);
 			
-		} else if(getNextEntity instanceof Enemy && me.getIsFallen()) {
+		} else if(getNextEntity instanceof Enemy && enemy.getIsFallen()) {
 			((Enemy)getNextEntity).setIsAlive(false);
-			me.getGame().getArrayGame()[me.getPositionX()][me.getPositionY()+1] = new Path(me.getPositionX(), me.getPositionY());
-			me.getGame().getAvatar().increaseDiamondsCounter(bonusEnemyKilled);
+			enemy.getGame().getArrayGame()[enemy.getPositionX()][enemy.getPositionY()+1] = new Path(enemy.getPositionX(), enemy.getPositionY());
+			enemy.getGame().getAvatar().increaseDiamondsCounter(bonusEnemyKilled);
 		} else if(getNextEntity instanceof stone && getLeftEntity instanceof Path && getLeftBottomEntity instanceof Path) {	
 			this.FallingMove(-1, 1);
 		 
 		} else if(getNextEntity instanceof stone && getRightEntity instanceof Path && getRightBottomEntity instanceof Path) {	
 			this.FallingMove(1, 1);
 		} else {
-			me.setIsFallen(false);
+			enemy.setIsFallen(false);
 		}
 	}
 	
@@ -61,11 +61,11 @@ public class FallingMove extends Actions<mobileElements>{
 	 */
 	public void FallingMove(int sideX, int sideY) {
 		
-		me.getGame().getArrayGame()[me.getPositionX() + sideX][me.getPositionY() + sideY] = me;
-		me.getGame().getArrayGame()[me.getPositionX()][me.getPositionY()] = new Path(me.getPositionX(), me.getPositionY());
-		me.setIsFallen(true);
-		me.setPositionX(me.getPositionX()+ sideX);
-		me.setPositionY(me.getPositionY()+ sideY);
+		enemy.getGame().getArrayGame()[enemy.getPositionX() + sideX][enemy.getPositionY() + sideY] = enemy;
+		enemy.getGame().getArrayGame()[enemy.getPositionX()][enemy.getPositionY()] = new Path(enemy.getPositionX(), enemy.getPositionY());
+		enemy.setIsFallen(true);
+		enemy.setPositionX(enemy.getPositionX()+ sideX);
+		enemy.setPositionY(enemy.getPositionY()+ sideY);
 		
 	}
 

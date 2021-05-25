@@ -14,7 +14,7 @@ import entity.Entity;
 public abstract class Actions <T extends Entity>{
 	
 	/** The mobile element concerned by the strategy */
-	protected mobileElements me = null;
+	protected mobileElements enemy = null;
 	/** The method that contains the strategy */
 	public abstract void runActions();
 	/** The method that gives the name of the strategy */

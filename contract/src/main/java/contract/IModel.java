@@ -6,8 +6,10 @@ import entity.Game;
 
 /**
  * The Interface IModel.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
  *
- * @author Jean-Aymeric Diet
  */
 public interface IModel {
 

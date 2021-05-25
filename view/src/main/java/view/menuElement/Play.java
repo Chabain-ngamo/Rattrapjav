@@ -5,8 +5,9 @@ package view.menuElement;
 
 import contract.Menu;
 
-/**
- * @author media
+/* @author Maiva
+ * @author Chabain
+ *  @author Vladimir
  *
  */
 public class Play extends MenuElement {
@@ -20,7 +21,7 @@ public class Play extends MenuElement {
 		if(this.isSelected()) {
 			return Menu.Play;
 		}
-		return Menu.Nop;
+		return Menu.Else;
 	}
 	
 

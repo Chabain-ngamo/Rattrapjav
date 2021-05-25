@@ -13,14 +13,14 @@ import elements.Enemy;
 
 public class EnemyMoveA extends Actions<Enemy> {
 	
-private Enemy me = null;
+private Enemy enemy = null;
 	
 	/**
 	 * The LoopEnemyMove strategy constructor.
 	 * @param me the enemy concerned
 	 */
-	public EnemyMoveA(Enemy me) {
-		this.me = me;
+	public EnemyMoveA(Enemy enemy) {
+		this.enemy = enemy;
 	}
 	
 	@Override
@@ -32,10 +32,10 @@ private Enemy me = null;
 		
 		switch(randomDirInt) {
 		case 1:
-			me.entityMove(1, 0, 0, 'S');
+			enemy.entityMove(1, 0, 0, 'S');
 			break;
 		case 2:
-			me.entityMove(-1, 0, 0, 'S');
+			enemy.entityMove(-1, 0, 0, 'S');
 			break;
 		}
 		

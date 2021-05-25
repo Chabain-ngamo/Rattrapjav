@@ -9,8 +9,10 @@ import entity.Game;
 
 /**
  * The Class Model.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
  *
- * @author Jean-Aymeric Diet
  */
 public final class Model extends Observable implements IModel {
 

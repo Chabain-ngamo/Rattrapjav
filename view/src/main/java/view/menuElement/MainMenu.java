@@ -2,6 +2,11 @@ package view.menuElement;
 
 import contract.Menu;
 
+/* @author Maiva
+* @author Chabain
+*  @author Vladimir
+*
+*/
 public class MainMenu extends MenuElement {
 	public MainMenu(String content, int size, int alpha) {
 		super(content, size, alpha);
@@ -12,7 +17,7 @@ public class MainMenu extends MenuElement {
 		if(this.isSelected()) {
 			return Menu.Mainmenu;
 		}
-		return Menu.Nop;
+		return Menu.Else;
 	}
 
 }

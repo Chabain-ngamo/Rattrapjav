@@ -9,8 +9,10 @@ import entity.Game;
 
 /**
  * The Class DAOHelloWorld.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
  *
- * @author Jean-Aymeric Diet
  */
 class DAOGame extends DAOEntity<Game> {
 

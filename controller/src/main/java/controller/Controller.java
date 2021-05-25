@@ -6,10 +6,14 @@ import contract.IModel;
 import contract.IView;
 import contract.Menu;
 import contract.State;
-import entity.AudioLoad;
+
 
 /**
  * The Class Controller.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
+ *
  */
 public final class Controller implements IController {
 
@@ -19,7 +23,6 @@ public final class Controller implements IController {
 	/** The model. */
 	private IModel	model;
 	
-	private AudioLoad audioLoad;
 	 private boolean firstClickOnPause;
 	
 
@@ -37,17 +40,6 @@ public final class Controller implements IController {
 		//this.getAudioLoad().startMusic("game");
 	}
 
-	private AudioLoad getAudioLoad() {
-		// TODO Auto-generated method stub
-		 return this.audioLoad;
-	}
-	public Controller(AudioLoad audioLoad) {
-		this.firstClickOnPause = true;
-        
-		this.audioLoad =audioLoad;
-		 this.getAudioLoad().stopMusic();
-	     this.getAudioLoad().playSound("new");
-	}
 	
 
 	/**
@@ -58,7 +50,7 @@ public final class Controller implements IController {
 	}
 	
 	public String getMessageToShow() {
-		return "Welcome to BoulderBash ! Press any key to start the game.Press\n- 1 for Level 1 \n - 2 for Level 2 \n - 3 for Level 3\n - 4 for Level 4\n - 5 for Level 5\n - 6 for Level 6\n - 7 for Level 7\n  Use Z/Q/S/D to move the character.";
+		return "enter 1, 2, 3, 4 or 5 to choose the level of your game.";
 	}
 	
 	/**

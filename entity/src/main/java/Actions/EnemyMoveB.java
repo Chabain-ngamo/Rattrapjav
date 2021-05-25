@@ -13,39 +13,39 @@ import elements.Enemy;
 
 public class EnemyMoveB extends Actions<Enemy>{
 	
-private Enemy me = null;
+private Enemy enemy = null;
 	
 	/**
 	 * The RandomEnemyMove strategy constructor.
 	 * @param me the enemy concerned
 	 */
-	public EnemyMoveB(Enemy me) {
-		this.me = me;
+	public EnemyMoveB(Enemy enemy) {
+		this.enemy = enemy;
 	}
 
 	@Override
 	public void runActions() {
 		
-		if(me.getIsAlive()) {
+		if(enemy.getIsAlive()) {
 			double randomDirection = Math.random();
 			randomDirection = randomDirection * 4 +1;
 			int randomDirInt = (int) randomDirection;
 			switch(randomDirInt) {
 			case 1:
-				me.entityMove(0, -1, 0, 'S');
+				enemy.entityMove(0, -1, 0, 'S');
 				break;
 			case 2:
-				me.entityMove(-1, 0, 0, 'S');
+				enemy.entityMove(-1, 0, 0, 'S');
 				break;
 			case 3:
-				me.entityMove(0, 1, 0, 'S');
+				enemy.entityMove(0, 1, 0, 'S');
 				break;
 			case 4:
-				me.entityMove(+1, 0, 0, 'S');
+				enemy.entityMove(+1, 0, 0, 'S');
 				break;
 			}
 		} else {
-			me.loadImage('X', me);
+			enemy.loadImage('X', enemy);
 		}
 		
 		
@@ -54,7 +54,7 @@ private Enemy me = null;
 
 	@Override
 	public String returnActions() {
-		return "RandomEnemyMove";
+		return "EnemyMoveB";
 	}
 
 }

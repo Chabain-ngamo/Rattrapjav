@@ -17,8 +17,10 @@ import entity.Sprite;
 
 /**
  * The Class ViewPanel.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
  *
- * @author Jean-Aymeric Diet
  */
 class ViewPanel extends JPanel implements Observer {
 

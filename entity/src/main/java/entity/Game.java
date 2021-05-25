@@ -219,7 +219,7 @@ public class Game extends Entity{
 		if(p != null) {
 				p.playerDeathLinkToEnemy();
 				p.didPlayerWin(numberOfDiamondsNeeded);
-				this.runStrategies();
+				this.runActions();
 		}
 	}
 	
@@ -227,7 +227,7 @@ public class Game extends Entity{
 	 * The runStrategies method.
 	 * Launch the map's entities strategies.
 	 */
-	public void runStrategies() {
+	public void runActions() {
 		Entity[][] entity = this.getArrayGame();
 		for (int y = getHeightGame() -1; y >= 0; y--) {
 			for (int x = 0; x < getWidthGame(); x++) {

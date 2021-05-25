@@ -2,8 +2,10 @@ package contract;
 
 /**
  * The Interface IView.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
  *
- * @author Jean-Aymeric Diet
  */
 public interface IView {
 

@@ -7,7 +7,6 @@ import elements.Path;
 import elements.Wall;
 import elements.Win;
 import elements.stone;
-import entity.AudioLoad;
 import entity.Entity;
 
 /**
@@ -19,12 +18,7 @@ import entity.Entity;
  */
 
 public class Collisions {
-	private AudioLoad audioLoad;
-
 	
-	public Collisions() {
-
-	}
 
 	/**
 	 * The checkForCollisions method.

@@ -20,8 +20,10 @@ import view.menuElement.Resume;
 
 /**
  * The Class ViewFrame.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
  *
- * @author Jean-Aymeric Diet
  */
 class ViewFrame extends JFrame implements KeyListener {
 
