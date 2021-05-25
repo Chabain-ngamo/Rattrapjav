@@ -6,6 +6,7 @@ package main;
 
 import contract.ControllerOrder;
 import controller.Controller;
+import entity.AudioLoad;
 import model.Model;
 import view.View;
 
@@ -25,7 +26,7 @@ public abstract class Main {
     public static void main(final String[] args) {
     	final Model model = new Model();   
         final View view = new View(model);
-        
+       // final AudioLoad audioLoad=new AudioLoad();
         final Controller controller = new Controller(view, model);
         view.setController(controller);
 		
@@ -33,5 +34,6 @@ public abstract class Main {
         controller.orderPerform(ControllerOrder.Game1); 
 
         controller.start();
+        
     }
 }

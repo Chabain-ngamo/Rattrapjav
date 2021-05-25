@@ -2,6 +2,7 @@ package elements;
 
 import java.io.IOException;
 
+import entity.AudioLoad;
 import entity.Sprite;
 /**
  * The Avatar class.
@@ -24,6 +25,7 @@ public class Avatar extends mobileElements {
 	private static final Sprite spriteUp = new Sprite('a', "Back_Rockford1.png");
 	/** The boolean that indicates if the player won */
 	private boolean isWin;
+	private AudioLoad audioLoad;
 
 	static {
 		spriteDown.loadImage();
@@ -130,6 +132,8 @@ public class Avatar extends mobileElements {
 				this.getGame().getArrayGame()[x][y+1] instanceof Enemy ||
 				this.getGame().getArrayGame()[x][y-1] instanceof Enemy) {
 			this.setIsAlive(false);
+            
+
 			this.loadImage('X', this);
 			
 			try {

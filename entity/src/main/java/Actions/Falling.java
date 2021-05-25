@@ -24,7 +24,7 @@ public class Falling extends Actions<mobileElements>{
 	
 	
 	@Override
-	public void runStrategy() {
+	public void runActions() {
 		
 		Entity getNextEntity = me.getGame().getArrayGame()[me.getPositionX()][me.getPositionY()+1];
 		final int bonusEnemyKilled = 4;
@@ -48,8 +48,8 @@ public class Falling extends Actions<mobileElements>{
 	}
 	
 	@Override
-	public String returnStrategy() {
-		return "BasicFalling";
+	public String returnActions() {
+		return "Falling";
 	}
 	
 

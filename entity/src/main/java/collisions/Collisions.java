@@ -7,6 +7,7 @@ import elements.Path;
 import elements.Wall;
 import elements.Win;
 import elements.stone;
+import entity.AudioLoad;
 import entity.Entity;
 
 /**
@@ -18,6 +19,8 @@ import entity.Entity;
  */
 
 public class Collisions {
+	private AudioLoad audioLoad;
+
 	
 	public Collisions() {
 
@@ -32,6 +35,8 @@ public class Collisions {
 	 */
 	
 	public boolean checkForCollisions(Entity[][] entity, int x, int y) {
+		
+	
 		if (entity[x][y] instanceof stone) {
 			return true;
 		} else if (entity[x][y] instanceof Wall) {
@@ -41,8 +46,10 @@ public class Collisions {
 		} else if (entity[x][y] instanceof Enemy) {
 			return true;
 		} else {
-			return false;
+			return false; 
 		}
+		
+			
 	}
 
 	/**

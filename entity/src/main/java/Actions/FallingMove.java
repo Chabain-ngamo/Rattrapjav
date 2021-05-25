@@ -23,7 +23,7 @@ public class FallingMove extends Actions<mobileElements>{
 	}
 
 	@Override
-	public void runStrategy() {
+	public void runActions() {
 		
 		Entity getNextEntity = me.getGame().getArrayGame()[me.getPositionX()][me.getPositionY()+1];
 		Entity getLeftEntity = me.getGame().getArrayGame()[me.getPositionX() - 1][me.getPositionY()];
@@ -70,7 +70,7 @@ public class FallingMove extends Actions<mobileElements>{
 	}
 
 	@Override
-	public String returnStrategy() {
+	public String returnActions() {
 		return "FallingMove";
 	}
 

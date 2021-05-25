@@ -24,7 +24,7 @@ private Enemy me = null;
 	}
 
 	@Override
-	public void runStrategy() {
+	public void runActions() {
 		
 		if(me.getIsAlive()) {
 			double randomDirection = Math.random();
@@ -53,7 +53,7 @@ private Enemy me = null;
 	}
 
 	@Override
-	public String returnStrategy() {
+	public String returnActions() {
 		return "RandomEnemyMove";
 	}
 

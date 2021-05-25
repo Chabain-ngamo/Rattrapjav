@@ -24,7 +24,7 @@ private Enemy me = null;
 	}
 	
 	@Override
-	public void runStrategy() {
+	public void runActions() {
 		
 		double randomDirection = Math.random();
 		randomDirection = randomDirection * 2 +1;
@@ -42,10 +42,7 @@ private Enemy me = null;
 	}
 
 	@Override
-	public String returnStrategy() {
-		return "LoopEnemyMove";
-	}
-		
+	
 	
 
 	

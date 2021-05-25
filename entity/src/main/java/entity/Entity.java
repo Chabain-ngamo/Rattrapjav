@@ -177,7 +177,7 @@ public abstract class Entity {
 	 * The setStrategy method.
 	 * @param strategy the new strategy of the entity
 	 */
-	public void setStrategy(Actions<?> actions) {
+	public void setActions(Actions<?> actions) {
 		this.actions = actions;
 	}
 

@@ -29,7 +29,7 @@ private static final Sprite sprite = new Sprite('D',"Diamond.png");
 	 */
 	public Diamond(int x, int y) {
 		super(sprite, x, y);
-		this.setStrategy(new Falling(this));
+		this.setActions(new Falling(this));
 	}
 
 	

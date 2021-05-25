@@ -34,10 +34,7 @@ public class stone extends mobileElements {
 	}
 
 
-	private void setActions(FallingMove fallingMove) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 
 	

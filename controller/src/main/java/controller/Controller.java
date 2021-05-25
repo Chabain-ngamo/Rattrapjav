@@ -6,6 +6,7 @@ import contract.IModel;
 import contract.IView;
 import contract.Menu;
 import contract.State;
+import entity.AudioLoad;
 
 /**
  * The Class Controller.
@@ -17,6 +18,10 @@ public final class Controller implements IController {
 
 	/** The model. */
 	private IModel	model;
+	
+	private AudioLoad audioLoad;
+	 private boolean firstClickOnPause;
+	
 
 	/**
 	 * Instantiates a new controller.
@@ -29,7 +34,21 @@ public final class Controller implements IController {
 	public Controller(final IView view, final IModel model) {
 		this.setView(view);
 		this.setModel(model);
+		//this.getAudioLoad().startMusic("game");
 	}
+
+	private AudioLoad getAudioLoad() {
+		// TODO Auto-generated method stub
+		 return this.audioLoad;
+	}
+	public Controller(AudioLoad audioLoad) {
+		this.firstClickOnPause = true;
+        
+		this.audioLoad =audioLoad;
+		 this.getAudioLoad().stopMusic();
+	     this.getAudioLoad().playSound("new");
+	}
+	
 
 	/**
      * Control.
@@ -53,6 +72,7 @@ public final class Controller implements IController {
 			this.model.loop();
 			try {
 				Thread.sleep(100);
+				
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -132,61 +152,16 @@ public final class Controller implements IController {
 			this.model.getGame().getAvatar().movePlayer('D');
 			//this.model.modelNotify();
 			break;
-			case Enter:
-				
-				switch(this.getModel().getState()) {
-				case Pause:
-				case Menu:
-					
-					break;
-				default:
-					break;
-				}
-				break;
-			case Escape:
-				
-				switch(this.getModel().getState()) {
-				case Playing:
-					this.getModel().setState(State.Pause);
-					break;
-				case End:
-					this.getModel().setState(State.Menu);
-					break;
-				case Pause:
-					this.getModel().setState(State.Playing);
-					break;
-				default:
-					break;
-				}
-				break;
-			default:
-				break;
+			
 		}
 	}
 
 	@Override
 	public void performMenuRequest(Menu menu) {
 		// TODO Auto-generated method stub
-		switch (menu) {
-		case Play:
-			this.getModel().setState(State.Playing);
-			break;
-		case Resume:
-			this.getModel().setState(State.Playing);
-			break;
-		case Mainmenu:
-			this.getModel().setState(State.Menu);
-			break;
-		case Quitgame:
-			this.getModel().getGame().getAvatar().getSpriteDeath();
-			System.exit(0);
-			break;
-		default:
-			break;
-	}
-		
 		
 	}
+
 	
 	
 

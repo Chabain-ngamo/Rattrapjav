@@ -28,6 +28,7 @@ public class Game extends Entity{
 	private Collisions collisions;
 	/** The number of diamonds needed to win the level */
 	private int numberOfDiamondsNeeded = 0;
+	private boolean gamePaused;
 
 
 	/**
@@ -231,10 +232,22 @@ public class Game extends Entity{
 		for (int y = getHeightGame() -1; y >= 0; y--) {
 			for (int x = 0; x < getWidthGame(); x++) {
 				if(entity[x][y].getActions() != null) {
-					entity[x][y].getActions().runStrategy();
+					entity[x][y].getActions().runActions();
 				}
 			}
 		}
+	}
+	public void setGamePaused(boolean gamePaused) {
+		this.gamePaused = gamePaused;
+	}
+
+	/**
+	 * Get the gamePaused variable
+	 * 
+	 * @return  gamePaused
+	 */
+	public boolean getGamePaused() {
+		return this.gamePaused;
 	}
 
 	

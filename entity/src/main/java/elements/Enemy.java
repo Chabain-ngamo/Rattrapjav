@@ -31,7 +31,7 @@ public class Enemy extends mobileElements {
 	 */
 	public Enemy(int x, int y) {
 		super(spriteDown, x, y);
-		this.setStrategy(new EnemyMoveB(this));
+		this.setActions(new EnemyMoveB(this));
 		this.isAlive = true;
 	}
 	

@@ -1,18 +1,14 @@
 package view;
 
-import java.io.IOException;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.*;
-import javax.swing.plaf.synth.ColorType;
-
 import contract.IModel;
 import elements.Avatar;
 import entity.Entity;
@@ -29,12 +25,9 @@ class ViewPanel extends JPanel implements Observer {
 	/** The view frame. */
 	private ViewFrame viewFrame;
 	/** The Background image */
-	private Image backgr;
-	/** The Main Menu Background image */
-	private Image mainMenuBackgr;
-	private static int squareSize = ViewFrame.getSquaresize();
-	private static int viewLength = ViewFrame.getViewLength();
-	private static int viewWidth = ViewFrame.getViewWidth();
+	
+	
+	
 	
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -998294702363713521L ;
@@ -46,7 +39,7 @@ class ViewPanel extends JPanel implements Observer {
 	private boolean isTimerStart = false;
 
 	public ViewPanel() {
-		this.setViewFrame(new ViewFrame());	
+		
 	}
 
 	/**
@@ -135,6 +128,7 @@ class ViewPanel extends JPanel implements Observer {
 				this.reverseFocusOnScreenAndStats(graphics, scale, width, height, playerPosX, playerPosY, avatar,game, imageSize);
 
 			} else {
+				
 				graphics.clearRect(0, 0, width, height);
 				graphics.drawString("BAD TIMING !", width / 2 - 75, height / 2);
 				counter = -100;
@@ -150,6 +144,7 @@ class ViewPanel extends JPanel implements Observer {
 			Sprite sprite = new Sprite('0', "menu.jpeg");
 			sprite.loadImage();
 			  graphics.drawImage(sprite.getImage(), 0, 0, this.getWidth(), this.getHeight(), this);
+			  
 		}
 		//switch(this.getViewFrame().getModel().getState()) {
 		/** Pauses the view g.*/
@@ -200,7 +195,7 @@ class ViewPanel extends JPanel implements Observer {
 	public void displayGame(Graphics graphics, int width, int height) {
 
 		final int imageSize = 16;
-		final int numberOfLevels = 6;
+		final int numberOfLevels = 5;
 		Game game = this.viewFrame.getModel().getGame();
 		IModel getModel = this.viewFrame.getModel();
 		Entity[][] loadGame = game.getArrayGame();
