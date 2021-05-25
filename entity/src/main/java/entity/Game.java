@@ -27,7 +27,7 @@ public class Game extends Entity{
 	/** The collisions handler of the map */
 	private Collisions collisions;
 	/** The number of diamonds needed to win the level */
-	private int numberOfDiamondsNeeded = 0;
+	private int nbrDiamonds = 0;
 	private boolean gamePaused;
 
 
@@ -35,14 +35,14 @@ public class Game extends Entity{
 	 * The Map's constructor.
 	 * @param id the id of the map
 	 * @param content the content of the map
-	 * @param numberOfDiamondsNeeded the number of diamonds need to win the level
+	 * @param nbrDiamonds the number of diamonds need to win the level
 	 */
-	public Game(final int id, final String content, int numberOfDiamondsNeeded) {
+	public Game(final int id, final String content, int nbrDiamonds) {
 		this.setId(id);
 		this.setContentOfGame(content);
 		collisions = new Collisions();
 		this.createGameToChars();
-		this.numberOfDiamondsNeeded = numberOfDiamondsNeeded;
+		this.nbrDiamonds = nbrDiamonds;
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class Game extends Entity{
 	 * The setCollisionsHandler method.
 	 * @param collisionsHandler the new collisions handler for the map
 	 */
-	public void setCollisionsHandler(Collisions collisions) {
+	public void setCollisions(Collisions collisions) {
 		this.collisions = collisions;
 	}
 
@@ -126,16 +126,16 @@ public class Game extends Entity{
 	 * The getNumberOfDiamondsNeeded method.
 	 * @return the number of diamonds need to win the level
 	 */
-	public int getNumberOfDiamondsNeeded() {
-		return numberOfDiamondsNeeded;
+	public int getNbrDiamonds() {
+		return nbrDiamonds;
 	}
 
 	/**
-	 * The setNumberOfDiamondsNeeded method.
-	 * @param numberOfDiamondsNeeded the new number of diamonds need to win the level
+	 * The setNbrDiamonds method.
+	 * @param nbrDiamonds the new number of diamonds need to win the level
 	 */
-	public void setNumberOfDiamondsNeeded(int numberOfDiamondsNeeded) {
-		this.numberOfDiamondsNeeded = numberOfDiamondsNeeded;
+	public void setNumberOfDiamondsNeeded(int nbrDiamonds) {
+		this.nbrDiamonds = nbrDiamonds;
 	}
 
 	/**
@@ -218,7 +218,7 @@ public class Game extends Entity{
 		Avatar p = this.getAvatar();
 		if(p != null) {
 				p.playerDeathLinkToEnemy();
-				p.didPlayerWin(numberOfDiamondsNeeded);
+				p.didPlayerWin(nbrDiamonds);
 				this.runActions();
 		}
 	}

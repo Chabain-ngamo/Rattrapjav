@@ -110,7 +110,7 @@ public final class Model extends Observable implements IModel {
 	 */
 	public void loop() {
 
-		if(this.getGame().getNumberOfDiamondsNeeded() != 0) {
+		if(this.getGame().getNbrDiamonds() != 0) {
 			this.getGame().loop();
 			this.modelNotify();
 		}

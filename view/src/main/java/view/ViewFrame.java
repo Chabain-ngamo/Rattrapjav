@@ -139,7 +139,7 @@ class ViewFrame extends JFrame implements KeyListener {
 		this.setTitle("   Bienvenue Sur BOULDER DASH   ");
 		this.setContentPane(vp);
 		
-		this.setSize(1480,780);
+		this.setSize(810,460);
 		this.setLocationRelativeTo(null);
 		
 	}
