@@ -36,7 +36,7 @@ class ViewPanel extends JPanel implements Observer {
 	/** The counter until the end of the game */
 	private static int timer = 150;
 	/** The boolean to refresh some information only once */
-	private boolean hasBeenNotifiedToStop = false;
+	private boolean modification = false;
 	/** The boolean to start properly the timer */
 	private boolean isTimerStart = false;
 
@@ -209,22 +209,22 @@ class ViewPanel extends JPanel implements Observer {
 			}
 		}
 	
-		if (!avatar.getIsAlive()&& hasBeenNotifiedToStop == false) {
+		if (!avatar.getlive()&& modification == false) {
 
-			hasBeenNotifiedToStop = true;
+			modification = true;
 			graphics.clearRect(0, 0, width, height);
 			this.viewFrame.printMessage("You died ! Try again...");
 			getModel.loadGame(game.getId());
-			hasBeenNotifiedToStop = false;
+			modification = false;
 		}
 
-		if (avatar.getIsWin() && hasBeenNotifiedToStop == false) {
+		if (avatar.getIsWin() && modification == false) {
 			if (game.getId() < numberOfLevels) {
 				getModel.loadGame(game.getId() + 1);
 				timer = timerResetValue;
 			} else {
-				hasBeenNotifiedToStop = true;
-				avatar.setIsAlive(false);
+				modification = true;
+				avatar.setlive(false);
 				graphics.clearRect(0, 0, width, height);
 				this.viewFrame.printMessage("You won ! Congrats !");
 				System.exit(0);

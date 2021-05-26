@@ -40,7 +40,7 @@ public class Avatar extends mobileElements {
 	 */
 	public Avatar(int x, int y) {
 		super(spriteDown, x, y);
-		this.isAlive = true;
+		this.live = true;
 		this.isWin = false;
 
 	}
@@ -87,7 +87,7 @@ public class Avatar extends mobileElements {
 	 */
 	public void movePlayer(char direction) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 
-		if(this.getIsAlive()) {
+		if(this.getlive()) {
 			switch (direction) {
 
 			case 'Z':
@@ -136,7 +136,7 @@ public class Avatar extends mobileElements {
 				this.getGame().getArrayGame()[x-1][y] instanceof Enemy ||
 				this.getGame().getArrayGame()[x][y+1] instanceof Enemy ||
 				this.getGame().getArrayGame()[x][y-1] instanceof Enemy) {
-			this.setIsAlive(false);
+			this.setlive(false);
             
 
 			this.loadImage('X', this);

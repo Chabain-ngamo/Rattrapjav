@@ -35,11 +35,11 @@ public class Falling extends Actions<mobileElements>{
 			enemy.setIsFallen(true);
 			enemy.setPositionY(enemy.getPositionY()+1);
 		} else if (getNextEntity instanceof Avatar && enemy.getIsFallen()){
-			((Avatar)getNextEntity).setIsAlive(false);
+			((Avatar)getNextEntity).setlive(false);
 			
 		} else if(getNextEntity instanceof Enemy && enemy.getIsFallen()) {
 			
-			((Enemy)getNextEntity).setIsAlive(false);
+			((Enemy)getNextEntity).setlive(false);
 			enemy.getGame().getArrayGame()[enemy.getPositionX()][enemy.getPositionY()+1] = new Path(enemy.getPositionX(), enemy.getPositionY());
 			enemy.getGame().getAvatar().increaseDiamondsCounter(bonusEnemyKilled);
 		} else {

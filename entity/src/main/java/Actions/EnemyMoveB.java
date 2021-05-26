@@ -31,7 +31,7 @@ private Enemy enemy = null;
 	@Override
 	public void runActions() throws UnsupportedAudioFileException, IOException, LineUnavailableException  {
 		
-		if(enemy.getIsAlive()) {
+		if(enemy.getlive()) {
 			double randomDirection = Math.random();
 			randomDirection = randomDirection * 4 +1;
 			int randomDirInt = (int) randomDirection;

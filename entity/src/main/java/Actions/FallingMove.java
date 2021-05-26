@@ -41,12 +41,12 @@ public class FallingMove extends Actions<mobileElements>{
 		if (getNextEntity instanceof Path) {
 			this.FallingMove(0, 1);
 		} else if (getNextEntity instanceof Avatar && enemy.getIsFallen()){
-			((Avatar)getNextEntity).setIsAlive(false);
+			((Avatar)getNextEntity).setlive(false);
 			Sound sound = new Sound();
 			sound.playSound1("sons/audio/sounds/die.wav");
 			
 		} else if(getNextEntity instanceof Enemy && enemy.getIsFallen()) {
-			((Enemy)getNextEntity).setIsAlive(false);
+			((Enemy)getNextEntity).setlive(false);
 			enemy.getGame().getArrayGame()[enemy.getPositionX()][enemy.getPositionY()+1] = new Path(enemy.getPositionX(), enemy.getPositionY());
 			enemy.getGame().getAvatar().increaseDiamondsCounter(bonusEnemyKilled);
 		} else if(getNextEntity instanceof stone && getLeftEntity instanceof Path && getLeftBottomEntity instanceof Path) {	

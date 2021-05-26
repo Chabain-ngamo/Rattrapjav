@@ -24,7 +24,7 @@ public abstract class mobileElements extends Entity{
 	private int diamondsTimer;
 	
 	/** The boolean to indicates if the mobile element is alive */
-	public boolean isAlive;
+	public boolean live;
 	
 	/** The death sprite for mobile entities */
 	protected static final Sprite spriteDeath = new Sprite('a', "Death.png");
@@ -92,7 +92,7 @@ public abstract class mobileElements extends Entity{
 			if (!collision) {
 
 				if(isAvatar == true) {
-					avatar.setIsAlive(false);
+					avatar.setlive(false);
 				} else {
 					loadArrayGame[xpos + x][ypos + y] = loadArrayGame[xpos][ypos];
 					loadArrayGame[xpos][ypos] = new Path(xpos, ypos);
@@ -176,16 +176,16 @@ public abstract class mobileElements extends Entity{
 	 * The getIsAlive method.
 	 * @return the status of live of the entity (true = is living).
 	 */
-	public boolean getIsAlive() {
-		return this.isAlive;
+	public boolean getlive() {
+		return this.live;
 	}
 
 	/**
 	 * The setIsAlive method.
 	 * @param isAlive define if the entity is still alive or not
 	 */
-	public void setIsAlive(boolean isAlive) {
-		this.isAlive = isAlive;
+	public void setlive(boolean live) {
+		this.live = live;
 	}
 	
 	/**
