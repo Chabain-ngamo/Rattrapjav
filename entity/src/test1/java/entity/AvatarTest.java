@@ -113,7 +113,7 @@ public class AvatarTest extends entityTest {
 		
 		assertEquals(expectedIncrementedDiamondCounter, aTest.getDiamondsCounter());
 		
-		aTest.increaseDiamondsCounter(4);
+		aTest.plusadiamond(4);
 		
 		final int expectedIncreasedDiamondCounter = 5;
 		

@@ -48,7 +48,7 @@ public class FallingMove extends Actions<mobileElements>{
 		} else if(getNextEntity instanceof Enemy && enemy.getIsFallen()) {
 			((Enemy)getNextEntity).setlive(false);
 			enemy.getGame().getArrayGame()[enemy.getPositionX()][enemy.getPositionY()+1] = new Path(enemy.getPositionX(), enemy.getPositionY());
-			enemy.getGame().getAvatar().increaseDiamondsCounter(bonusEnemyKilled);
+			enemy.getGame().getAvatar().plusadiamond(bonusEnemyKilled);
 		} else if(getNextEntity instanceof stone && getLeftEntity instanceof Path && getLeftBottomEntity instanceof Path) {	
 			this.FallingMove(-1, 1);
 		 

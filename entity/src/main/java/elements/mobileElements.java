@@ -159,7 +159,7 @@ public abstract class mobileElements extends Entity{
 	 * @param increase the amount of increase of the counter.
 	 */
 	
-	public void increaseDiamondsCounter(int increase) {
+	public void plusadiamond(int increase) {
 		this.diamondsTimer += increase;
 	}
 
