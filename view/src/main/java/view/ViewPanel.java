@@ -34,7 +34,7 @@ class ViewPanel extends JPanel implements Observer {
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -998294702363713521L ;
 	/** The counter until the end of the game */
-	private static int counter = 200;
+	private static int timer = 150;
 	/** The boolean to refresh some information only once */
 	private boolean hasBeenNotifiedToStop = false;
 	/** The boolean to start properly the timer */
@@ -116,7 +116,7 @@ class ViewPanel extends JPanel implements Observer {
 			int playerPosY = this.viewFrame.getModel().getGame().getAvatar().getPositionY();
 			Font font = new Font("Arial", Font.BOLD, 20);
 			graphics.setFont(font);
-			if (counter != 0 && counter != -100) {
+			if (timer != 0 && timer != -100) {
 
 				this.focusGameOnAvatar(graphics, width, height, playerPosX, playerPosY, scale, imageSize);
 
@@ -132,8 +132,8 @@ class ViewPanel extends JPanel implements Observer {
 			} else {
 				
 				graphics.clearRect(0, 0, width, height);
-				graphics.drawString("BAD TIMING !", width / 2 - 75, height / 2);
-				counter = -100;
+				graphics.drawString("you lost because of the over time !", width / 2 - 75, height / 2);
+				timer = -100;
 				/*
 				 * NOW WE HAVE TO PERFORM AN ACTION WHEN THE PLAYER LOOSES (+ RESTART THE TIMER
 				 * = set it two 200 when the player switch between the maps)
@@ -178,8 +178,8 @@ class ViewPanel extends JPanel implements Observer {
 		TimerTask timerTask = new TimerTask() {
 			@Override
 			public void run() {
-				if (counter != -100 && counter > 0) {
-					counter--;// increments the counter
+				if (timer != -100 && timer > 0) {
+					timer--;// increments the counter
 				}
 			}
 		};
@@ -221,7 +221,7 @@ class ViewPanel extends JPanel implements Observer {
 		if (avatar.getIsWin() && hasBeenNotifiedToStop == false) {
 			if (game.getId() < numberOfLevels) {
 				getModel.loadGame(game.getId() + 1);
-				counter = timerResetValue;
+				timer = timerResetValue;
 			} else {
 				hasBeenNotifiedToStop = true;
 				avatar.setIsAlive(false);
@@ -278,7 +278,7 @@ class ViewPanel extends JPanel implements Observer {
 		 Font font = new Font("Courier", Font.BOLD, 8);
 		 graphics.setFont(font);
 		graphics.setColor(Color.BLUE);
-		graphics.drawString("Remaining time : " + counter, 590, 315);
+		graphics.drawString("Remaining time : " + timer, 590, 315);
 		//graphics.drawString(String.valueOf("Diamond Counter : " + player.getDiamondsCounter()), 590, 350);
 		graphics.setColor(Color.RED);
 		graphics.drawString(String.valueOf("Number needed : " + game.getNbrDiamonds()), 590,
@@ -288,7 +288,7 @@ class ViewPanel extends JPanel implements Observer {
 			graphics.setColor(Color.white);
 			graphics.fillRect(588, 290,120, 50);
 			graphics.setColor(Color.BLUE);
-			graphics.drawString("Remaining time : " + counter, 590, 315);
+			graphics.drawString("Remaining time : " + timer, 590, 315);
 			graphics.setColor(Color.RED);
 			//graphics.drawString(String.valueOf("Number needed : " + map.getNumberOfDiamondsNeeded()), 590,
 					//330);
@@ -296,7 +296,7 @@ class ViewPanel extends JPanel implements Observer {
 			//graphics.setColor(Color.BLACK);
 			//graphics.drawString("Remaining time : " + counter, 590, 310);
 			graphics.setColor(Color.GREEN);
-			graphics.drawString(String.valueOf("Diamond Counter : " + avatar.getDiamondsCounter()), 590, 300);
+			graphics.drawString(String.valueOf("number of Diamonds : " + avatar.getDiamondsCounter()), 590, 300);
 			//graphics.setColor(Color.BLUE);
 			graphics.drawString("GO TO EXIT DOOR !", 590, 330);
 		}
@@ -314,18 +314,18 @@ class ViewPanel extends JPanel implements Observer {
      * @return the counter
      */
     public int getCounter() {
-      return counter;
+      return timer;
     }
 
     
     /**
-     * The setCounter method.
-     * @param newCounter the new counter
+     * The setTimer method.
+     * @param newtimer the new counter
      * @throws IndexOutOfBoundsException in case of an exception
      */
-    public void setCounter(int newCounter) throws IndexOutOfBoundsException{
-      if (newCounter > 0 && newCounter < 10000) {
-          ViewPanel.counter = newCounter;
+    public void setTimer(int newtimer) throws IndexOutOfBoundsException{
+      if (newtimer > 0 && newtimer < 10000) {
+          ViewPanel.timer = newtimer;
       }else {
           throw new IndexOutOfBoundsException("Wrong parameters");
       }

@@ -47,7 +47,7 @@ public class viewPanelTest {
 	@Test
 	    public void testCounter() {
 	        try {
-	            vp.setCounter(-100);
+	            vp.setTimer(-100);
 	            ViewPanel.startTimer();
 	            fail("Failed");
 	        } catch (IndexOutOfBoundsException anIndexOutOfBoundsException) {

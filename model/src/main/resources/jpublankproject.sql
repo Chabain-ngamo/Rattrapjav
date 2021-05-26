@@ -26,8 +26,8 @@ DELIMITER $$
 --
 -- Procedures
 --
-DROP PROCEDURE IF EXISTS `mapById`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `mapById` (IN `p_id` INT)  READS SQL DATA
+DROP PROCEDURE IF EXISTS `GameId`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GameId` (IN `p_id` INT)  READS SQL DATA
     SQL SECURITY INVOKER
 SELECT * FROM Game WHERE id = p_id$$
 
@@ -42,8 +42,8 @@ DELIMITER ;
 DROP TABLE IF EXISTS `Game`;
 CREATE TABLE IF NOT EXISTS `Game` (
   `id` int(2) NOT NULL AUTO_INCREMENT,
-  `levelContent` text NOT NULL,
-  `numberDiamondsNeeded` int(2) NOT NULL,
+  `LevelGame` text NOT NULL,
+  `nbrDiamonds` int(2) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `Game` (
 -- Dumping data for table `levels`
 --
 
-INSERT INTO `Game` (`id`, `levelContent`, `numberDiamondsNeeded`) VALUES
+INSERT INTO `Game` (`id`, `LevelGame`, `nbrDiamonds`) VALUES
 (1, 'wwwwwwwwwwwwwwwwwwwwwwwww\r\nwdsddsddwdsdddDdwdddpdsdw\r\nwdddddddwddddddpwppdpdddw\r\nwadddddddddddddsdssdddddw\r\nwDddddddwdsddddswdsdpddpw\r\nwdddddddwdsddddswdsdppddw\r\nwwwwwwwwwwwwwwwwwwwwpwwww\r\nwddddssdwddpddddwdddpddsw\r\nwdddddddwddpddddwdddpdddw\r\nwWpppppppppsppppppppppppw\r\nwsddsdddwddddsddwddssdddw\r\nwsddddsdwddsddsdwdddsdssw\r\nwdsddDddwdddsDddwdddddddw\r\nwwwwwwwwwwwwwwwwwwwwwwwww', 4),
 (2, 'wwwwwwwwwwwwwwwwwwwwwwwww\r\nwddddssdwddpddddwdddpddsw\r\nwdddddddwddpddddwdddpdddw\r\nwapppppppppsppppppppppppw\r\nwsddsdddwddddsddwddssdddw\r\nwsddddsdwddsddsdwdddsdssw\r\nwdsddDddwdddsDddwdddddddw\r\nwwwwwwwwwwwwwwwwwwppwwwww\r\nwsWpepddwddddsdswdddpdddw\r\nwdddddpdwpddddddwddDpdddw\r\nwppppppppsppppppppppppDpw\r\nwdDdddspwddpddddwddDpsddw\r\nwdsdWddswddsddsdwddddddDw\r\nwwwwwwwwwwwwwwwwwwwwwwwww', 7),
 (3, 'wwwwwwwwwwwwwwwwwwwwwwwww\r\nwdddddsddddddwwddddsDdddw\r\nwddwdwdwddwddwdwddwddwwdw\r\nwawdswwwdddddswddddddwwww\r\nwdwdDwdwdwwwdwdwdwwwdwwdw\r\nwddwdwdwDwdwDwwddsdwdwwdw\r\nwdddddddddddddddddddDdddw\r\nwwwwppwwwwwwwwwwwwwppwwww\r\nwdddddddwdddssdwddddpppdw\r\nwddddpppwdDsdddwdddspepsw\r\nwddsdpeppddddddwddDdpppdw\r\nwDsddpppwddsddDwddddddddw\r\nwdddddddwddddWdwddddddddw\r\nwwwwwwwwwwwwwwwwwwwwwwwww', 9),
