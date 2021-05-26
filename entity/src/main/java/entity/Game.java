@@ -29,17 +29,17 @@ public class Game extends Entity{
 	private int id;
 	/** The bidimensional array containing the entities of the map */
 	private Entity[][] gameToChars;
-	/** The collisions handler of the map */
+	/** The collisions of the map */
 	private Collisions collisions;
-	/** The number of diamonds needed to win the level */
+	/** The number of diamonds  for win the level */
 	private int nbrDiamonds = 0;
 	private boolean gamePaused;
 
 
 	/**
-	 * The Map's constructor.
-	 * @param id the id of the map
-	 * @param content the content of the map
+	 * The Game's constructor.
+	 * @param id the id of the Game
+	 * @param content the content of the mGame
 	 * @param nbrDiamonds the number of diamonds need to win the level
 	 */
 	public Game(final int id, final String content, int nbrDiamonds) {
@@ -51,23 +51,23 @@ public class Game extends Entity{
 	}
 
 	/**
-	 * The getCollisionsHandler method.
-	 * @return CollisionsHandler the collisions handler of the map
+	 * The getCollisions method.
+	 * @return Collisions the collisions  of the map
 	 */
 	public Collisions getCollisions() {
 		return collisions;
 	}
 
 	/**
-	 * The setCollisionsHandler method.
-	 * @param collisionsHandler the new collisions handler for the map
+	 * The setCollisions method.
+	 * @param collisions the new collisions for the map
 	 */
 	public void setCollisions(Collisions collisions) {
 		this.collisions = collisions;
 	}
 
 	/**
-	 * Instantiates a new basic map.
+	 * Instantiates a new basic Game.
 	 */
 	public Game() {
 		this(1, "", 0);
@@ -128,8 +128,8 @@ public class Game extends Entity{
 	}
 
 	/**
-	 * The getNumberOfDiamondsNeeded method.
-	 * @return the number of diamonds need to win the level
+	 * The getNbrDiamondsmethod.
+	 * @return the number of diamonds to win the level
 	 */
 	public int getNbrDiamonds() {
 		return nbrDiamonds;
@@ -137,14 +137,14 @@ public class Game extends Entity{
 
 	/**
 	 * The setNbrDiamonds method.
-	 * @param nbrDiamonds the new number of diamonds need to win the level
+	 * @param nbrDiamonds the new number of diamonds to win the level
 	 */
 	public void setNumberOfDiamondsNeeded(int nbrDiamonds) {
 		this.nbrDiamonds = nbrDiamonds;
 	}
 
 	/**
-	 * The createMapToChars method.
+	 * The createGameToChars method.
 	 * Transform the String content of the map into entities.
 	 */
 	public void createGameToChars() {

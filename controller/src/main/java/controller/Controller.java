@@ -47,6 +47,12 @@ public final class Controller implements IController {
 
 	
 
+	public Controller() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
 	/**
      * Control.
      */
