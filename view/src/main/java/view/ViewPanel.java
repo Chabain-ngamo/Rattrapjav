@@ -277,18 +277,18 @@ class ViewPanel extends JPanel implements Observer {
 		graphics.fillRect(588, 290,120, 50);
 		 Font font = new Font("Courier", Font.BOLD, 8);
 		 graphics.setFont(font);
-		graphics.setColor(Color.BLUE);
-		graphics.drawString("Remaining time : " + timer, 590, 315);
+		graphics.setColor(Color.BLACK);
+		graphics.drawString("TIMER : " + timer, 180, 220);
 		//graphics.drawString(String.valueOf("Diamond Counter : " + player.getDiamondsCounter()), 590, 350);
 		graphics.setColor(Color.RED);
 		graphics.drawString(String.valueOf("Number needed : " + game.getNbrDiamonds()), 590,
 				330);
 
-		if (avatar.getDiamondsCounter() >= game.getNbrDiamonds()) {
+		if (avatar.getDiamondstimer() >= game.getNbrDiamonds()) {
 			graphics.setColor(Color.white);
 			graphics.fillRect(588, 290,120, 50);
-			graphics.setColor(Color.BLUE);
-			graphics.drawString("Remaining time : " + timer, 590, 315);
+			graphics.setColor(Color.BLACK);
+			graphics.drawString("TIMER : " + timer, 180, 220);
 			graphics.setColor(Color.RED);
 			//graphics.drawString(String.valueOf("Number needed : " + map.getNumberOfDiamondsNeeded()), 590,
 					//330);
@@ -296,13 +296,13 @@ class ViewPanel extends JPanel implements Observer {
 			//graphics.setColor(Color.BLACK);
 			//graphics.drawString("Remaining time : " + counter, 590, 310);
 			graphics.setColor(Color.GREEN);
-			graphics.drawString(String.valueOf("Diamond Counter : " + avatar.getDiamondsCounter()), 590, 300);
+			graphics.drawString(String.valueOf("Diamond Counter : " + avatar.getDiamondstimer()), 590, 300);
 			//graphics.setColor(Color.BLUE);
 			graphics.drawString("GO TO EXIT DOOR !", 590, 330);
 		}
 		else {
 			graphics.setColor(Color.BLUE);
-			graphics.drawString(String.valueOf("Diamond Counter : " + avatar.getDiamondsCounter()), 590, 300);
+			graphics.drawString(String.valueOf("Diamond Counter : " + avatar.getDiamondstimer()), 590, 300);
 		}
 
 	}

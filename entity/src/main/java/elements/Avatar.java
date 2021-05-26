@@ -176,7 +176,7 @@ public class Avatar extends mobileElements {
 		int x = this.getPositionX();
 		int y = this.getPositionY();
 
-		if( this.getGame().getArrayGame()[x+sideX][y+sideY] instanceof Win && this.getDiamondsCounter() >= numberOfDiamondsNeeded) {
+		if( this.getGame().getArrayGame()[x+sideX][y+sideY] instanceof Win && this.getDiamondstimer() >= numberOfDiamondsNeeded) {
 			this.getGame().getArrayGame()[x+sideX][y+sideY] = this.getGame().getArrayGame()[x][y];
 			this.getGame().getArrayGame()[x][y] = new Path(x,y);
 			this.setIsWin(true);

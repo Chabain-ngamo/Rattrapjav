@@ -105,19 +105,19 @@ public class AvatarTest extends entityTest {
 	public void testDiamondCounterPlayer() {	
 		final int expectedInitialDiamondCounter = 0;
 		
-		assertEquals(expectedInitialDiamondCounter, aTest.getDiamondsCounter());
+		assertEquals(expectedInitialDiamondCounter, aTest.getDiamondstimer());
 		
 		aTest.incrementDiamondsCounter();
 		
 		final int expectedIncrementedDiamondCounter = 1;
 		
-		assertEquals(expectedIncrementedDiamondCounter, aTest.getDiamondsCounter());
+		assertEquals(expectedIncrementedDiamondCounter, aTest.getDiamondstimer());
 		
 		aTest.plusadiamond(4);
 		
 		final int expectedIncreasedDiamondCounter = 5;
 		
-		assertEquals(expectedIncreasedDiamondCounter, aTest.getDiamondsCounter());
+		assertEquals(expectedIncreasedDiamondCounter, aTest.getDiamondstimer());
 	}
 	
 	/**

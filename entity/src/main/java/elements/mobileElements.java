@@ -168,7 +168,7 @@ public abstract class mobileElements extends Entity{
 	 * @return the number of diamonds the entity has
 	 */
 	
-	public int getDiamondsCounter() {
+	public int getDiamondstimer() {
 		return this.diamondsTimer;
 	}
 
