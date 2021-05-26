@@ -44,7 +44,7 @@ public class SpriteTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		sprite = new Sprite('O', "/sprites/settings/", "diamonds.png");
+		sprite = new Sprite('O', "/sprites/");
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class SpriteTest {
 	@Test
 	public void testLoadImage() {
 		this.sprite.loadImage();
-		Assert.assertNotNull(this.sprite.getImage());
+		Assert.assertNotNull(this.sprite.getImageName());
 	}
 
 	
