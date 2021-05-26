@@ -1,6 +1,10 @@
 package contract;
 
+import java.io.IOException;
 import java.util.Observable;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 import entity.Game;
 
@@ -38,8 +42,11 @@ public interface IModel {
 	
 	/**
 	 * Execute methods in the model to load the game.
+	 * @throws LineUnavailableException 
+	 * @throws IOException 
+	 * @throws UnsupportedAudioFileException 
 	 */
-	void loop();
+	void loop() throws UnsupportedAudioFileException, IOException, LineUnavailableException;
 	
 	/**
 	 * Sets the  state.

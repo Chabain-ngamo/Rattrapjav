@@ -2,6 +2,9 @@ package elements;
 
 import java.io.IOException;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 import entity.Sprite;
 /**
  * The Avatar class.
@@ -78,8 +81,11 @@ public class Avatar extends mobileElements {
 	 * The movePlayer method.
 	 * Calls the MobileElements entityMove method.
 	 * @param direction the direction the player wants to move, depending on the keyListener in the view
+	 * @throws LineUnavailableException 
+	 * @throws IOException 
+	 * @throws UnsupportedAudioFileException 
 	 */
-	public void movePlayer(char direction) {
+	public void movePlayer(char direction) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 
 		if(this.getIsAlive()) {
 			switch (direction) {

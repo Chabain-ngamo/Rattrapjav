@@ -1,7 +1,11 @@
 package model;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Observable;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 import contract.IModel;
 import contract.State;
@@ -107,8 +111,11 @@ public final class Model extends Observable implements IModel {
 	/**
 	 * The loop method.
 	 * Executes the map loop and notify observers.
+	 * @throws LineUnavailableException 
+	 * @throws IOException 
+	 * @throws UnsupportedAudioFileException 
 	 */
-	public void loop() {
+	public void loop() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 
 		if(this.getGame().getNbrDiamonds() != 0) {
 			this.getGame().loop();

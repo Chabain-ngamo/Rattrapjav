@@ -1,13 +1,17 @@
 package view;
 
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.SwingUtilities;
 
 import contract.ControllerOrder;
 import contract.IController;
 import contract.IModel;
 import contract.IView;
+import entity.Sound;
 
 /**
  * The Class View.
@@ -29,10 +33,16 @@ public final class View implements IView, Runnable {
 	 *
 	 * @param model
 	 *          the model
+	 * @throws LineUnavailableException 
+	 * @throws IOException 
+	 * @throws UnsupportedAudioFileException 
 	 */
-	public View(final IModel model) {
+	public View(final IModel model) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+		String filePath="sons/audio/music/game.wav";
 		this.viewFrame = new ViewFrame(model);
 		this.setModel(model);
+		Sound sound = new Sound();
+		sound.playSound(filePath);
 		SwingUtilities.invokeLater(this);
 	}
 	

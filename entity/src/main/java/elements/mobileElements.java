@@ -1,7 +1,13 @@
 package elements;
 
+import java.io.IOException;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 import collisions.Collisions;
 import entity.Entity;
+import entity.Sound;
 import entity.Sprite;
 
 /**
@@ -42,9 +48,12 @@ public abstract class mobileElements extends Entity{
 	 * @param y the y the entity wants to go (1 goes for down and -1 for up)
 	 * @param sideX the side the entity wants to move a stone
 	 * @param direction the char that indicates to load the entity's specific sprite
+	 * @throws LineUnavailableException 
+	 * @throws IOException 
+	 * @throws UnsupportedAudioFileException 
 	 */
 	
-	public void entityMove(int x, int y, int sideX, char direction) {
+	public void entityMove(int x, int y, int sideX, char direction) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 
 		final int xpos = this.getPositionX();
 		final int ypos = this.getPositionY();
@@ -75,6 +84,9 @@ public abstract class mobileElements extends Entity{
 				this.setPositionY(ypos + y);
 				this.setPositionX(xpos + x);
 				loadArrayGame[xpos + x + sideX][ypos + y].setPositionX(xpos + x + sideX);
+				Sound sound = new Sound();
+				sound.playSound1("sons/audio/sounds/touch.wav");
+						
 			}
 			
 			if (!collision) {
@@ -92,6 +104,8 @@ public abstract class mobileElements extends Entity{
 
 			if (isDiamond == true) {
 				this.incrementDiamondsCounter();
+				Sound sound = new Sound();
+				sound.playSound1("sons/audio/sounds/coin.wav");
 			}
 			
 

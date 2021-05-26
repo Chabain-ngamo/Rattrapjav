@@ -1,5 +1,10 @@
 package controller;
 
+import java.io.IOException;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 import contract.ControllerOrder;
 import contract.IController;
 import contract.IModel;
@@ -56,9 +61,12 @@ public final class Controller implements IController {
 	/**
 	 * Start method.
 	 * Launch the model loop. Refresh each 100 milliseconds.
+	 * @throws LineUnavailableException 
+	 * @throws IOException 
+	 * @throws UnsupportedAudioFileException 
 	 */
 	
-	public void start() {
+	public void start() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		
 		while(true) {
 			this.model.loop();
@@ -105,13 +113,16 @@ public final class Controller implements IController {
      *
      * @param controllerOrder
      *            the controller order
+	 * @throws LineUnavailableException 
+	 * @throws IOException 
+	 * @throws UnsupportedAudioFileException 
      */
 	/*
 	 * (non-Javadoc)
 	 *
 	 * @see contract.IController#orderPerform(contract.ControllerOrder)
 	 */
-	public void orderPerform(final ControllerOrder controllerOrder) {
+	public void orderPerform(final ControllerOrder controllerOrder) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		switch (controllerOrder) {
 		case Game1:
 			this.model.loadGame(1);

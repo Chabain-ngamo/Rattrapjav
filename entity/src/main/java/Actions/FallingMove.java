@@ -1,11 +1,17 @@
 package Actions;
 
+import java.io.IOException;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 import elements.Avatar;
 import elements.Enemy;
 import elements.Path;
 import elements.mobileElements;
 import elements.stone;
 import entity.Entity;
+import entity.Sound;
 
 /**
  * The FaillingMove class.
@@ -23,7 +29,7 @@ public class FallingMove extends Actions<mobileElements>{
 	}
 
 	@Override
-	public void runActions() {
+	public void runActions() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		
 		Entity getNextEntity = enemy.getGame().getArrayGame()[enemy.getPositionX()][enemy.getPositionY()+1];
 		Entity getLeftEntity = enemy.getGame().getArrayGame()[enemy.getPositionX() - 1][enemy.getPositionY()];
@@ -36,6 +42,8 @@ public class FallingMove extends Actions<mobileElements>{
 			this.FallingMove(0, 1);
 		} else if (getNextEntity instanceof Avatar && enemy.getIsFallen()){
 			((Avatar)getNextEntity).setIsAlive(false);
+			Sound sound = new Sound();
+			sound.playSound1("sons/audio/sounds/die.wav");
 			
 		} else if(getNextEntity instanceof Enemy && enemy.getIsFallen()) {
 			((Enemy)getNextEntity).setIsAlive(false);

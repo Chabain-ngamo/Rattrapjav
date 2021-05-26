@@ -1,5 +1,10 @@
 package contract;
 
+import java.io.IOException;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 /**
  * The Interface IController.
  * @author Maiva
@@ -19,8 +24,11 @@ public interface IController {
 	 *
 	 * @param controllerOrder
 	 *          the controller order
+	 * @throws LineUnavailableException 
+	 * @throws IOException 
+	 * @throws UnsupportedAudioFileException 
 	 */
-	public void orderPerform(ControllerOrder controllerOrder);
+	public void orderPerform(ControllerOrder controllerOrder) throws UnsupportedAudioFileException, IOException, LineUnavailableException;
 	
 	public void performMenuRequest(Menu menu);
 }

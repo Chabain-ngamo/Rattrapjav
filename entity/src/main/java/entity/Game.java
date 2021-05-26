@@ -1,5 +1,10 @@
 package entity;
 
+import java.io.IOException;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 import collisions.Collisions;
 import elements.Avatar;
 import elements.Diamond;
@@ -213,8 +218,11 @@ public class Game extends Entity{
 	/**
 	 * The loop method.
 	 * Executes methods of the map and its entities.
+	 * @throws LineUnavailableException 
+	 * @throws IOException 
+	 * @throws UnsupportedAudioFileException 
 	 */
-	public void loop() {
+	public void loop() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		Avatar p = this.getAvatar();
 		if(p != null) {
 				p.playerDeathLinkToEnemy();
@@ -226,8 +234,11 @@ public class Game extends Entity{
 	/**
 	 * The runStrategies method.
 	 * Launch the map's entities strategies.
+	 * @throws LineUnavailableException 
+	 * @throws IOException 
+	 * @throws UnsupportedAudioFileException 
 	 */
-	public void runActions() {
+	public void runActions() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		Entity[][] entity = this.getArrayGame();
 		for (int y = getHeightGame() -1; y >= 0; y--) {
 			for (int x = 0; x < getWidthGame(); x++) {

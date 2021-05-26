@@ -1,5 +1,10 @@
 package Actions;
 
+import java.io.IOException;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 import elements.Enemy;
 
 /**
@@ -24,7 +29,7 @@ private Enemy enemy = null;
 	}
 
 	@Override
-	public void runActions() {
+	public void runActions() throws UnsupportedAudioFileException, IOException, LineUnavailableException  {
 		
 		if(enemy.getIsAlive()) {
 			double randomDirection = Math.random();
