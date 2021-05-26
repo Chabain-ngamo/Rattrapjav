@@ -14,7 +14,9 @@ import org.junit.Test;
 
 /**
  * The test class for the Sprite class.
- * @author media
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
  *
  */
 public class SpriteTest {

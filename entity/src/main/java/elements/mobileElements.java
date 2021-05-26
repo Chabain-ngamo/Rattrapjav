@@ -18,7 +18,7 @@ public abstract class mobileElements extends Entity{
 	private int diamondsCounter;
 	
 	/** The boolean to indicates if the mobile element is alive */
-	protected boolean isAlive;
+	public boolean isAlive;
 	
 	/** The death sprite for mobile entities */
 	protected static final Sprite spriteDeath = new Sprite('a', "Death.png");
