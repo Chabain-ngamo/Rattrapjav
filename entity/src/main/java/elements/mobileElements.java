@@ -21,7 +21,7 @@ import entity.Sprite;
 public abstract class mobileElements extends Entity{
 	
 	/** The diamond counter */
-	private int diamondsCounter;
+	private int diamondsTimer;
 	
 	/** The boolean to indicates if the mobile element is alive */
 	public boolean isAlive;
@@ -151,7 +151,7 @@ public abstract class mobileElements extends Entity{
 	 * Increase by 1 the diamond counter of the entity.
 	 */
 	public void incrementDiamondsCounter() {
-		this.diamondsCounter++;
+		this.diamondsTimer++;
 	}
 	
 	/**
@@ -160,7 +160,7 @@ public abstract class mobileElements extends Entity{
 	 */
 	
 	public void increaseDiamondsCounter(int increase) {
-		this.diamondsCounter += increase;
+		this.diamondsTimer += increase;
 	}
 
 	/**
@@ -169,7 +169,7 @@ public abstract class mobileElements extends Entity{
 	 */
 	
 	public int getDiamondsCounter() {
-		return this.diamondsCounter;
+		return this.diamondsTimer;
 	}
 
 	/**

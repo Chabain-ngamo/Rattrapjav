@@ -296,7 +296,7 @@ class ViewPanel extends JPanel implements Observer {
 			//graphics.setColor(Color.BLACK);
 			//graphics.drawString("Remaining time : " + counter, 590, 310);
 			graphics.setColor(Color.GREEN);
-			graphics.drawString(String.valueOf("number of Diamonds : " + avatar.getDiamondsCounter()), 590, 300);
+			graphics.drawString(String.valueOf("Diamond Counter : " + avatar.getDiamondsCounter()), 590, 300);
 			//graphics.setColor(Color.BLUE);
 			graphics.drawString("GO TO EXIT DOOR !", 590, 330);
 		}
