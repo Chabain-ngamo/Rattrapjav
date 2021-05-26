@@ -149,12 +149,12 @@ public class Avatar extends mobileElements {
 	 * The didPlayerWin method.
 	 * @param numberOfDiamondsNeeded the number of diamonds necessary to go the next level, stored in the database
 	 */
-	public void didPlayerWin(int numberOfDiamondsNeeded) {
+	public void didPlayerWin(int nbrDiamonds) {
 		
-		this.goToExit(0, 1, numberOfDiamondsNeeded);
-		this.goToExit(0, -1, numberOfDiamondsNeeded);
-		this.goToExit(1, 0, numberOfDiamondsNeeded);
-		this.goToExit(-1, 0, numberOfDiamondsNeeded);
+		this.goToExit(0, 1, nbrDiamonds);
+		this.goToExit(0, -1, nbrDiamonds);
+		this.goToExit(1, 0, nbrDiamonds);
+		this.goToExit(-1, 0, nbrDiamonds);
 		
 	}
 	
