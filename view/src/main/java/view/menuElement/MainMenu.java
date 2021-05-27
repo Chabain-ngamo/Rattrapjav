@@ -11,6 +11,9 @@ public class MainMenu extends MenuElement {
 	
 	/**
      * The constructor MainMenu.
+     * @param  content means the content of the mainMenu.
+     *  @param size  the size of the board mainmenu.
+     *   @param  alpha  the action that the mainmenu are suppose to do .
      */
 	public MainMenu(String content, int size, int alpha) {
 		super(content, size, alpha);

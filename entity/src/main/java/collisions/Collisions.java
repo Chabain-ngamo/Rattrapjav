@@ -51,6 +51,7 @@ public class Collisions {
 	 * @param playerPosition the player
 	 * @param x the avatar's x
 	 * @param y the avatar's y
+	 * @return a boolean that indicates if there is a diamonds near the entity. If true, it can collect.
 	 */
 	
 	public boolean checkForDiamonds(Entity[][] playerPosition, int x, int y) {
@@ -66,6 +67,7 @@ public class Collisions {
 	 * @param entity the entity that is gonna kill or no the avatar
 	 * @param x the entity's x
 	 * @param y the entity's y
+	 * @return a boolean that indicates if there is a avatar near the entity. If true, it can moves.
 	 */
 	
 	public boolean checkForAvatar(Entity[][] entity, int x, int y) {

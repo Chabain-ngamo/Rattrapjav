@@ -46,9 +46,9 @@ public class Sprite {
 
 	/**
 	 * Instantiates a new Sprite.
-	 * @param sprite_ref The ref of the sprite
-	 * @param spritePath The Path of the sprite
-	 * @param imageName The Image Name
+	 * @param  ref of the sprite
+	 * @param Path of the sprite
+	 * @param Image Name
 	 */
 	public Sprite(char sprite_ref, String imageName) {
 		this.setSprite_ref(sprite_ref);
@@ -67,7 +67,7 @@ public class Sprite {
 
 	/**
 	 * Sets the image.
-	 * @param myPicture The image
+	 * @param  image the image of the sprite.
 	 */
 	public void setImage(Image image) {
 		this.image = image;

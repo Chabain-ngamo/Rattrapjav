@@ -1,11 +1,17 @@
 package Actions;
 
+import java.io.IOException;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 import elements.Avatar;
 import elements.Enemy;
 import elements.Path;
 import elements.mobileElements;
 import entity.Entity;
 import entity.Game;
+import entity.Sound;
 
 /**
  * The Failling class.
@@ -18,33 +24,35 @@ import entity.Game;
 
 public class Falling extends Actions<mobileElements>{
 	
-	public Falling(mobileElements enemy) {
-		this.enemy = enemy;
+	public Falling(mobileElements me) {
+		this.me = me;
 	}
 	
 	
 	//method runActions
 	@Override
-	public void runActions() {
+	public void runActions() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		
-		Entity getNextEntity = enemy.getGame().getArrayGame()[enemy.getPositionX()][enemy.getPositionY()+1];
+		Entity getNextEntity = me.getGame().getArrayGame()[me.getPositionX()][me.getPositionY()+1];
 		final int bonusEnemyKilled = 4;
 		
 		if (getNextEntity instanceof Path) {
-			enemy.getGame().getArrayGame()[enemy.getPositionX()][enemy.getPositionY()+1] = enemy;
-			enemy.getGame().getArrayGame()[enemy.getPositionX()][enemy.getPositionY()] = new Path(enemy.getPositionX(), enemy.getPositionY());
-			enemy.setIsFallen(true);
-			enemy.setPositionY(enemy.getPositionY()+1);
-		} else if (getNextEntity instanceof Avatar && enemy.getIsFallen()){
+			me.getGame().getArrayGame()[me.getPositionX()][me.getPositionY()+1] = me;
+			me.getGame().getArrayGame()[me.getPositionX()][me.getPositionY()] = new Path(me.getPositionX(), me.getPositionY());
+			me.setIsFallen(true);
+			me.setPositionY(me.getPositionY()+1);
+		} else if (getNextEntity instanceof Avatar && me.getIsFallen()){
 			((Avatar)getNextEntity).setlive(false);
+			Sound sound = new Sound();
+			sound.playSound1("sons/audio/sounds/die.wav");
 			
-		} else if(getNextEntity instanceof Enemy && enemy.getIsFallen()) {
+		} else if(getNextEntity instanceof Enemy && me.getIsFallen()) {
 			
 			((Enemy)getNextEntity).setlive(false);
-			enemy.getGame().getArrayGame()[enemy.getPositionX()][enemy.getPositionY()+1] = new Path(enemy.getPositionX(), enemy.getPositionY());
-			enemy.getGame().getAvatar().plusadiamond(bonusEnemyKilled);
+			me.getGame().getArrayGame()[me.getPositionX()][me.getPositionY()+1] = new Path(me.getPositionX(), me.getPositionY());
+			me.getGame().getAvatar().plusadiamond(bonusEnemyKilled);
 		} else {
-			enemy.setIsFallen(false);
+			me.setIsFallen(false);
 		}
 	}
 	

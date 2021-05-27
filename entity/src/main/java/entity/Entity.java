@@ -46,7 +46,8 @@ public abstract class Entity {
 	/**
 	 * The setGame method.
 	 * Defines the game on which the entity evolves.
-	 * @param map the new map
+	 * @param the new game
+	 *  
 	 */
 	public void setGame(Game game) {
 		this.game = game;
@@ -166,16 +167,16 @@ public abstract class Entity {
 	}
 
 	/**
-	 * The getStrategy method.
-	 * @return the strategy of the entity
+	 * The getActions method.
+	 * @return the action of the entity
 	 */
 	public Actions<?> getActions() {
 		return actions;
 	}
 
 	/**
-	 * The setStrategy method.
-	 * @param strategy the new strategy of the entity
+	 * The setAction method.
+	 * @param the new action of the entity
 	 */
 	public void setActions(Actions<?> actions) {
 		this.actions = actions;

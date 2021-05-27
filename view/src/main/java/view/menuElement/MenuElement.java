@@ -19,6 +19,9 @@ public class MenuElement {
 	
 	/**
      * The constructor MenuElement.
+     * @param  content means the content of the Menuelement.
+     *  @param size  the size of the board mainmenu.
+     *   @param  alpha  the action that the menuelement are suppose to do .
      */
 	
 	public MenuElement(String content, int size, int alpha) {

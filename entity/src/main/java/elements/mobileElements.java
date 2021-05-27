@@ -44,6 +44,12 @@ public abstract class mobileElements extends Entity{
 	/**
 	 * The entityMove method.
 	 * Allows mobile entities to move on the game.
+	 * @throws LineUnavailableException 
+     * A LineUnavailableException is an exception indicating that aline cannot be opened because it is unavailable. This situationarises most commonly when a requested line is already in useby another 
+     * @throws IOException 
+     * Signals that an I/O exception of some sort has occurred. This class is the general class of exceptions produced by failed orinterrupted I/O operations
+     * @throws UnsupportedAudioFileException 
+     * means An UnsupportedAudioFileException is an exception indicating that an operation failed because a file did not contain valid data of a recognized filetype and format.
 	 * @param sideX the side the entity wants to move a stone
 	 * @param direction the char that indicates to load the entity's specific sprite 
 	 */
@@ -177,7 +183,8 @@ public abstract class mobileElements extends Entity{
 
 	/**
 	 * The setIsAlive method.
-	 * @param isAlive define if the entity is still alive or not
+	 * @param live define if the entity is still alive or not
+	 * 
 	 */
 	public void setlive(boolean live) {
 		this.live = live;

@@ -80,7 +80,13 @@ public class Avatar extends mobileElements {
 	/**
 	 * The movePlayer method.
 	 * Calls the MobileElements entityMove method.
-	 * @throws IOException 
+	 * @throws LineUnavailableException 
+     * A LineUnavailableException is an exception indicating that aline cannot be opened because it is unavailable. This situationarises most commonly when a requested line is already in useby another 
+     * @throws IOException 
+     * Signals that an I/O exception of some sort has occurred. This class is the general class of exceptions produced by failed orinterrupted I/O operations
+     * @throws UnsupportedAudioFileException 
+     * means An UnsupportedAudioFileException is an exception indicating that an operation failed because a file did not contain valid data of a recognized filetype and format.
+     * @param direction the direction of avatar.
 	 */
 	public void movePlayer(char direction) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 
@@ -164,9 +170,9 @@ public class Avatar extends mobileElements {
 	/**
 	 * The goToExit method.
 	 * Check if the player goes on an exitDoor.
-	 * @param sideX the x side on which the avatar moves
-	 * @param sideY the y side on which the avatar moves
-	 * @param numberOfDiamondsNeeded the number of diamonds necessary to go the next level, stored in the database
+	 * @param sideX the x side on which the avatar moves.
+	 * @param sideY the y side on which the avatar moves.
+	 * @param nbrOfDiamondsNeeded the number of diamonds necessary to go the next level, stored in the database
 	 */ 
 	public void goToExit(int sideX, int sideY, int nbrDiamonds) {
 		

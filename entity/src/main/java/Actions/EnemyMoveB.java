@@ -22,7 +22,7 @@ private Enemy enemy = null;
 	
 	/**
 	 * The EnemyMoveB Actions constructor.
-	 * @param me the enemy concerned
+	 * @param enemy the enemy concerned
 	 */
 	public EnemyMoveB(Enemy enemy) {
 		this.enemy = enemy;

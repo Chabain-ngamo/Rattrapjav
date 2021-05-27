@@ -15,6 +15,9 @@ public class QuitGame extends MenuElement {
 	
 	/**
      * The constructor QuitGame.
+     * @param  content means the content of the quitgame.
+     *  @param size  the size of the board quitgame.
+     *   @param  alpha  the action that the quitgame are suppose to do .
      */
 	public QuitGame(String content, int size, int alpha) {
 		super(content, size, alpha);
