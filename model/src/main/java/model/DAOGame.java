@@ -70,7 +70,7 @@ class DAOGame extends DAOEntity<Game> {
 			call.execute();
 			final ResultSet resultSet = call.getResultSet();
 			if (resultSet.first()) {
-				game = new Game(id, resultSet.getString("levelcontent"), resultSet.getInt("NumberDiamondsNeeded"));
+				game = new Game(id, resultSet.getString("Game"), resultSet.getInt("nbrDiamonds"));
 			}
 			return game;
 		} catch (final SQLException e) {

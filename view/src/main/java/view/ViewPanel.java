@@ -310,17 +310,17 @@ class ViewPanel extends JPanel implements Observer {
 	
 	 
     /**
-     * The getCounter method.
+     * The getTimer method.
      * @return the counter
      */
-    public int getCounter() {
+    public int getTimer() {
       return timer;
     }
 
     
     /**
      * The setTimer method.
-     * @param newtimer the new counter
+     * @param newtimer the new timer
      * @throws IndexOutOfBoundsException in case of an exception
      */
     public void setTimer(int newtimer) throws IndexOutOfBoundsException{
