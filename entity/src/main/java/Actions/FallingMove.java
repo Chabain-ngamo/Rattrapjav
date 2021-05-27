@@ -62,7 +62,7 @@ public class FallingMove extends Actions<mobileElements>{
 	
 	
 	/**
-	 * The cascadeFalling method.
+	 * The Falling method.
 	 * Defines the falling of the mobile element.
 	 * @param sideX the x side on which the entity is going to fell
 	 * @param sideY the y side on which the entity is going to fell
