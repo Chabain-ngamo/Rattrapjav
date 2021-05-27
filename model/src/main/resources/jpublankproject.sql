@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `basejava`
+-- Database: `jpublankproject`
 --
 
 DELIMITER $$
@@ -27,7 +27,7 @@ DELIMITER $$
 -- Procedures
 --
 DROP PROCEDURE IF EXISTS `GameId`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GameId` (IN `p_id` INT)  READS SQL DATA
+CREATE DEFINER=`root`@`localhost` PROCEDURE `mapById` (IN `p_id` INT)  READS SQL DATA
     SQL SECURITY INVOKER
 SELECT * FROM Game WHERE id = p_id$$
 
@@ -58,7 +58,3 @@ INSERT INTO `Game` (`id`, `Game`, `nbrDiamonds`) VALUES
 (4, 'wwwwwwwwwwwwwwwwwwwwwwwww\r\nwdddddsddddwdsddddddddddw\r\nwdddddddwdddddddddwddsddw\r\nwdswdwdddddwdwDwdddddsDdw\r\nwaswwwdwwwdwdwdwdwwwdsddw\r\nwddwDwdwdwdwddwddwdwdddsw\r\nwddppdddddpepdsdsdddddddw\r\nwwwppwwwwwwwwDwpwwddwwwww\r\nwdddsdwdDdddwpwpwdwdddddw\r\nwdspppwddsdswwwwwddwdsddw\r\nwdspepwdddwddddddDddsdddw\r\nwdDpppwdddwdpepddddsdpddw\r\nwsdddDwdWdwdddddddsddwddw\r\nwwwwwwwwwwwwwwwwwwwwwwwww', 8),
 (5, 'wwwwwwwwwwwwwwwwwwwwwwwww\r\nwdddddwddwddddddsdddddddw\r\nwddwdwwdddddwwdwdwDwdwwww\r\nwadwdwwdwdwdwdwwdwwwdwwwd\r\nwdddwdwwwdwdwwdwdwdwdwwpw\r\nwddddsddddddddddddddddddw\r\nwdwwddddwwwwwwwwwwwwwssdw\r\nwddDwddwddddddddddddwdddw\r\nwwwwddwddwwwwwwpeppwddwdw\r\nwdsddwDdwWddddddddwddwddw\r\nwdddwdddwwwwwwwwwwddwwdsw\r\nwDdwddswddssssdddddwDwpdw\r\nwdwdddddddddddddddwdddpdw\r\nwwwwwwwwwwwwwwwwwwwwwwwww', 5);
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
