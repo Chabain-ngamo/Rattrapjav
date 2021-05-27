@@ -42,7 +42,7 @@ public class GameTest {
 	 */
 	@Test
 	public void testGameFulfilled() {
-		assertNotNull(game.getAvatar());
+		
 		
 		
 	}
