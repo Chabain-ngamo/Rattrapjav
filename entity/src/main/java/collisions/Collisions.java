@@ -49,9 +49,8 @@ public class Collisions {
 	/**
 	 * The checkForDiamonds method.
 	 * @param playerPosition the player
-	 * @param x the player's x
-	 * @param y the player's y
-	 * @return a boolean that indicates if the player is going on a diamond.
+	 * @param x the avatar's x
+	 * @param y the avatar's y
 	 */
 	
 	public boolean checkForDiamonds(Entity[][] playerPosition, int x, int y) {
@@ -64,10 +63,9 @@ public class Collisions {
 	
 	/**
 	 * The checkForPlayer method.
-	 * @param entity the entity that is gonna kill or no the player
+	 * @param entity the entity that is gonna kill or no the avatar
 	 * @param x the entity's x
 	 * @param y the entity's y
-	 * @return a boolean that indicates if there is a player near the entity.
 	 */
 	
 	public boolean checkForAvatar(Entity[][] entity, int x, int y) {
@@ -96,9 +94,9 @@ public class Collisions {
 	
 	/**
 	 * The checkForStoneToMove method.
-	 * @param entity the player
-	 * @param x the player's x
-	 * @param y the player's y
+	 * @param entity the avatar
+	 * @param x the avatar's x
+	 * @param y the avatar's y
 	 * @param sideX the side on which the player wants to move the stone (left/right)
 	 * @return a boolean that indicates if the player can move a stone on the side he wants.
 	 */

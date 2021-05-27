@@ -23,6 +23,7 @@ public class Falling extends Actions<mobileElements>{
 	}
 	
 	
+	//method runActions
 	@Override
 	public void runActions() {
 		

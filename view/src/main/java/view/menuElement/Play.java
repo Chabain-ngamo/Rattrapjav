@@ -12,6 +12,11 @@ import contract.Menu;
  */
 public class Play extends MenuElement {
 	
+	
+	/**
+     * The constructor play.
+     */
+	
 	public Play(String content, int size, int alpha) {
 		super(content, size, alpha);
 	}

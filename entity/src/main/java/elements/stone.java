@@ -24,8 +24,8 @@ public class stone extends mobileElements {
 	
 	/**
 	 * The stone's constructor
-	 * @param x the initial stone's x on the map
-	 * @param y the initial stone's y on the map
+	 * @param x the initial stone's x on the game
+	 * @param y the initial stone's y on the game
 	 */
 	public stone(int x, int y) {
 		

@@ -8,6 +8,10 @@ import contract.Menu;
 *
 */
 public class MainMenu extends MenuElement {
+	
+	/**
+     * The constructor MainMenu.
+     */
 	public MainMenu(String content, int size, int alpha) {
 		super(content, size, alpha);
 	}

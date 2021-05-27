@@ -21,9 +21,9 @@ public class Win extends motionlessElements {
 	
 	
 	/**
-	 * The ExitDoor's constructor
-	 * @param x the x of the exit door
-	 * @param y the y of the exit door
+	 * The Win's constructor
+	 * @param x the x of the win
+	 * @param y the y of the win
 	 */
 	public Win(int x, int y) {
 		super(sprite, x, y);

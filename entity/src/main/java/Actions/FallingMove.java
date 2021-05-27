@@ -28,6 +28,8 @@ public class FallingMove extends Actions<mobileElements>{
 		this.enemy = enemy;
 	}
 
+	
+	//method runActions
 	@Override
 	public void runActions() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		

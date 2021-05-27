@@ -20,10 +20,10 @@ public interface IModel {
 	Game getGame();
 
 	/**
-	 * Load the map.
+	 * Load the game.
 	 *
 	 * @param id
-	 *          the id of the map from the database
+	 *          the id of the game from the database
 	 */
 	void loadGame(int id);
 

@@ -17,13 +17,13 @@ import entity.Sprite;
 public class Avatar extends mobileElements {
 	
 	
-	/** The down sprite for the player */
+	/** The down sprite for the avatar */
 	private static final Sprite spriteDown = new Sprite('a', "Avatar.png");
-	/** The left sprite for the player */
+	/** The left sprite for the avatar */
 	private static final Sprite spriteTurnLeft = new Sprite('a', "AvatarLeft.png");
-	/** The right sprite for the player */
+	/** The right sprite for the avatar */
 	private static final Sprite spriteTurnRight = new Sprite('a', "AvatarRight.png");
-	/** The up sprite for the player */
+	/** The up sprite for the avatar */
 	private static final Sprite spriteUp = new Sprite('a', "AvatarUp.png");
 	/** The boolean that indicates if the player won */
 	private boolean isWin;
@@ -47,7 +47,7 @@ public class Avatar extends mobileElements {
 
 	/**
 	 * The getSpriteDown method.
-	 * @return Sprite the basic sprite of the player
+	 * @return Sprite the basic sprite of the avatar
 	 */
 	public Sprite getSpriteDown() {
 		return spriteDown;
@@ -55,7 +55,7 @@ public class Avatar extends mobileElements {
 	
 	/**
 	 * The getSpriteTurnLeft method.
-	 * @return Sprite the left sprite of the player
+	 * @return Sprite the left sprite of the avatar
 	 */
 	public Sprite getSpriteTurnLeft() {
 		return spriteTurnLeft;
@@ -63,7 +63,7 @@ public class Avatar extends mobileElements {
 
 	/**
 	 * The getSpriteTurnRight method.
-	 * @return Sprite the right sprite of the player
+	 * @return Sprite the right sprite of the avatar
 	 */
 	public Sprite getSpriteTurnRight() {
 		return spriteTurnRight;
@@ -71,7 +71,7 @@ public class Avatar extends mobileElements {
 
 	/**
 	 * The getSpriteUp method.
-	 * @return Sprite the up sprite of the player
+	 * @return Sprite the up sprite of the avatar
 	 */
 	public Sprite getSpriteUp() {
 		return spriteUp;
@@ -80,10 +80,7 @@ public class Avatar extends mobileElements {
 	/**
 	 * The movePlayer method.
 	 * Calls the MobileElements entityMove method.
-	 * @param direction the direction the player wants to move, depending on the keyListener in the view
-	 * @throws LineUnavailableException 
 	 * @throws IOException 
-	 * @throws UnsupportedAudioFileException 
 	 */
 	public void movePlayer(char direction) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 
@@ -108,7 +105,7 @@ public class Avatar extends mobileElements {
 	
 	/**
 	 * The getIsWin method.
-	 * @return a boolean that indicates if the player won
+	 * @return a boolean that indicates if the avatar won
 	 */
 	public boolean getIsWin() {
 		return isWin;
@@ -116,7 +113,7 @@ public class Avatar extends mobileElements {
 
 	/**
 	 * The setIsWin method.
-	 * @param isWin set the win of the player
+	 * @param isWin set the win of the avatar
 	 */
 	public void setIsWin(boolean isWin) {
 		this.isWin = isWin;
@@ -125,7 +122,7 @@ public class Avatar extends mobileElements {
 
 	/**
 	 * The playerDeathLinkToEnemy method.
-	 * Check for any enemy around the player, to kill him if there is some.
+	 * Check for any enemy around the avatar, to kill him if there is some.
 	 */
 	public void playerDeathLinkToEnemy() {
 		
@@ -153,7 +150,7 @@ public class Avatar extends mobileElements {
 
 	/**
 	 * The didPlayerWin method.
-	 * @param numberOfDiamondsNeeded the number of diamonds necessary to go the next level, stored in the database
+	 * @param nbrDiamonds the number of diamonds necessary to go the next level, stored in the database
 	 */
 	public void didPlayerWin(int nbrDiamonds) {
 		
@@ -167,16 +164,16 @@ public class Avatar extends mobileElements {
 	/**
 	 * The goToExit method.
 	 * Check if the player goes on an exitDoor.
-	 * @param sideX the x side on which the player moves
-	 * @param sideY the y side on which the player moves
+	 * @param sideX the x side on which the avatar moves
+	 * @param sideY the y side on which the avatar moves
 	 * @param numberOfDiamondsNeeded the number of diamonds necessary to go the next level, stored in the database
 	 */ 
-	public void goToExit(int sideX, int sideY, int numberOfDiamondsNeeded) {
+	public void goToExit(int sideX, int sideY, int nbrDiamonds) {
 		
 		int x = this.getPositionX();
 		int y = this.getPositionY();
 
-		if( this.getGame().getArrayGame()[x+sideX][y+sideY] instanceof Win && this.getDiamondstimer() >= numberOfDiamondsNeeded) {
+		if( this.getGame().getArrayGame()[x+sideX][y+sideY] instanceof Win && this.getDiamondstimer() >= nbrDiamonds) {
 			this.getGame().getArrayGame()[x+sideX][y+sideY] = this.getGame().getArrayGame()[x][y];
 			this.getGame().getArrayGame()[x][y] = new Path(x,y);
 			this.setIsWin(true);

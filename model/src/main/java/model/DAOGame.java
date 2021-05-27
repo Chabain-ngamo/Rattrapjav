@@ -21,9 +21,7 @@ class DAOGame extends DAOEntity<Game> {
 	}
 
 	/*
-	 * (non-Javadoc)
-	 *
-	 * @see model.DAOEntity#create(model.Entity)
+
 	 */
 	@Override
 	public boolean create(final Game entity) {
@@ -32,7 +30,6 @@ class DAOGame extends DAOEntity<Game> {
 	}
 
 	/*
-	 * (non-Javadoc)
 	 *
 	 * @see model.DAOEntity#delete(model.Entity)
 	 */
@@ -43,9 +40,6 @@ class DAOGame extends DAOEntity<Game> {
 	}
 
 	/*
-	 * (non-Javadoc)
-	 *
-	 * @see model.DAOEntity#update(model.Entity)
 	 */
 	@Override
 	public boolean update(final Game entity) {

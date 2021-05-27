@@ -14,10 +14,20 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 /**
- * @author media
+ * The Game class.
+ * @author Maiva
+ * @author Chabain
+ *  @author Vladimir
  *
  */
+
 public class Sound {
+	
+	/** continuously play the sound during all the party 
+	 * @throws LineUnavailableException 
+	 * @throws IOException 
+	 * @throws UnsupportedAudioFileException */
+	
 public void playSound(String filepath) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		
 		try {
@@ -42,6 +52,13 @@ public void playSound(String filepath) throws UnsupportedAudioFileException, IOE
 			e.printStackTrace();
 		}
 	}
+
+
+
+/** just play the sound when the avatar touch a diamond or the stone 
+ * @throws LineUnavailableException 
+ * @throws IOException 
+ * @throws UnsupportedAudioFileException */
 public void playSound1(String filepath) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 	
 	try {

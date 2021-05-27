@@ -33,8 +33,8 @@ public abstract class mobileElements extends Entity{
 	/**
 	 * The MobileElements constructor
 	 * @param sprite the default sprite of the entity
-	 * @param x the initial entity's x on the map
-	 * @param y the initial entity's y on the map
+	 * @param x the initial entity's x on the game
+	 * @param y the initial entity's y on the game
 	 */
 	
 	public mobileElements(Sprite sprite, int x, int y) {
@@ -43,14 +43,9 @@ public abstract class mobileElements extends Entity{
 
 	/**
 	 * The entityMove method.
-	 * Allows mobile entities to move on the map.
-	 * @param x the x the entity wants to go (1 goes for right and -1 for left)
-	 * @param y the y the entity wants to go (1 goes for down and -1 for up)
+	 * Allows mobile entities to move on the game.
 	 * @param sideX the side the entity wants to move a stone
-	 * @param direction the char that indicates to load the entity's specific sprite
-	 * @throws LineUnavailableException 
-	 * @throws IOException 
-	 * @throws UnsupportedAudioFileException 
+	 * @param direction the char that indicates to load the entity's specific sprite 
 	 */
 	
 	public void entityMove(int x, int y, int sideX, char direction) throws UnsupportedAudioFileException, IOException, LineUnavailableException {

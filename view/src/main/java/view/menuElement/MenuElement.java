@@ -16,6 +16,11 @@ public class MenuElement {
 	private int alpha;
 	private boolean selected;
 	
+	
+	/**
+     * The constructor MenuElement.
+     */
+	
 	public MenuElement(String content, int size, int alpha) {
 		this.setContent(content);
 		this.setSize(size);

@@ -18,14 +18,14 @@ import entity.Entity;
 
 public abstract class Actions <T extends Entity>{
 	
-	/** The mobile element concerned by the strategy */
+	/** The mobile element concerned by the actions */
 	protected mobileElements enemy = null;
-	/** The method that contains the strategy 
+	/** The method that contains the actions 
 	 * @throws LineUnavailableException 
 	 * @throws IOException 
 	 * @throws UnsupportedAudioFileException */
 	public abstract void runActions() throws UnsupportedAudioFileException, IOException, LineUnavailableException;
-	/** The method that gives the name of the strategy */
+	/** The method that gives the name of the actions */
 	public abstract String returnActions();
 
 }

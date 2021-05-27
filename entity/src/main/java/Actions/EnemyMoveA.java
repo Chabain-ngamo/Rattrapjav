@@ -21,7 +21,7 @@ public class EnemyMoveA extends Actions<Enemy> {
 private Enemy enemy = null;
 	
 	/**
-	 * The LoopEnemyMove strategy constructor.
+	 * The EnemyMoveA actions constructor.
 	 * @param me the enemy concerned
 	 */
 	public EnemyMoveA(Enemy enemy) {

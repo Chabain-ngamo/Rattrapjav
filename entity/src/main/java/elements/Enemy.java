@@ -24,8 +24,7 @@ public class Enemy extends mobileElements {
 	}
 	
 	/**
-	 * The enemy's constructor
-	 * Use of DP strategy to set a specific one.
+	 * The enemy's constructor.
 	 * @param x the initial enemy's x
 	 * @param y the initial enemy's y
 	 */

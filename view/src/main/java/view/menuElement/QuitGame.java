@@ -12,6 +12,10 @@ import contract.Menu;
 */
 public class QuitGame extends MenuElement {
 
+	
+	/**
+     * The constructor QuitGame.
+     */
 	public QuitGame(String content, int size, int alpha) {
 		super(content, size, alpha);
 	}

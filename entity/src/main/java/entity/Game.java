@@ -25,11 +25,11 @@ import elements.stone;
 
 public class Game extends Entity{
 	private String contentOfGame;
-	/** The id of the map */
+	/** The id of the game */
 	private int id;
-	/** The bidimensional array containing the entities of the map */
+	/** The bidimensional array containing the entities of the game */
 	private Entity[][] gameToChars;
-	/** The collisions of the map */
+	/** The collisions of the game */
 	private Collisions collisions;
 	/** The number of diamonds  for win the level */
 	private int nbrDiamonds = 0;
@@ -39,8 +39,8 @@ public class Game extends Entity{
 	/**
 	 * The Game's constructor.
 	 * @param id the id of the Game
-	 * @param content the content of the mGame
-	 * @param nbrDiamonds the number of diamonds need to win the level
+	 * @param content the content of the Game
+	 * @param nbrDiamonds the number of diamonds to win the level
 	 */
 	public Game(final int id, final String content, int nbrDiamonds) {
 		this.setId(id);
@@ -74,7 +74,7 @@ public class Game extends Entity{
 	}
 
 	/**
-	 * Gets the id of the map.
+	 * Gets the id of the game.
 	 *
 	 * @return the id
 	 */
@@ -83,7 +83,7 @@ public class Game extends Entity{
 	}
 
 	/**
-	 * Sets the id of the map.
+	 * Sets the id of the .game
 	 *
 	 * @param id the new id
 	 */
@@ -92,7 +92,7 @@ public class Game extends Entity{
 	}
 
 	/**
-	 * Gets the content of the map
+	 * Gets the content of the game
 	 *
 	 * @return the content as a String.
 	 */
@@ -101,7 +101,7 @@ public class Game extends Entity{
 	}
 
 	/**
-	 * Sets the content of the map.
+	 * Sets the content of the game.
 	 *
 	 * @param content the new content
 	 */
@@ -111,7 +111,7 @@ public class Game extends Entity{
 
 	/**
 	 * The getHeightMap method.
-	 * @return the height of the map
+	 * @return the height of the game
 	 */
 	public int getHeightGame() {
 		String[] mapFirstLength = getContentOfGame().split("\n");
@@ -120,7 +120,7 @@ public class Game extends Entity{
 
 	/**
 	 * The getWidthMap method.
-	 * @return the width of the map
+	 * @return the width of the game
 	 */
 	public int getWidthGame() {
 		String[] mapFirstLength = getContentOfGame().split("\n");
@@ -191,8 +191,8 @@ public class Game extends Entity{
 	}
 
 	/**
-	 * The getArrayMap method.
-	 * @return the bidimensional array of the map with all the entities.
+	 * The getArrayGame method.
+	 * @return the bidimensional array of the game with all the entities.
 	 */
 	public Entity[][] getArrayGame() {
 
@@ -200,8 +200,8 @@ public class Game extends Entity{
 	}
 
 	/**
-	 * The getPlayer method.
-	 * @return the player of the map.
+	 * The getAvatar method.
+	 * @return the avatar of the game.
 	 */
 	public Avatar getAvatar() {
 		Entity[][] entity = this.getArrayGame();
@@ -218,9 +218,6 @@ public class Game extends Entity{
 	/**
 	 * The loop method.
 	 * Executes methods of the map and its entities.
-	 * @throws LineUnavailableException 
-	 * @throws IOException 
-	 * @throws UnsupportedAudioFileException 
 	 */
 	public void loop() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		Avatar p = this.getAvatar();
@@ -233,10 +230,7 @@ public class Game extends Entity{
 	
 	/**
 	 * The runStrategies method.
-	 * Launch the map's entities strategies.
-	 * @throws LineUnavailableException 
-	 * @throws IOException 
-	 * @throws UnsupportedAudioFileException 
+	 * Launch the game's entities actions.
 	 */
 	public void runActions() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		Entity[][] entity = this.getArrayGame();

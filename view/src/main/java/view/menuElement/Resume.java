@@ -11,6 +11,11 @@ import contract.Menu;
  *
  */
 public class Resume extends MenuElement {
+	
+	
+	/**
+     * The constructor Resume.
+     */
 
 	public Resume(String content, int size, int alpha) {
 		super(content, size, alpha);

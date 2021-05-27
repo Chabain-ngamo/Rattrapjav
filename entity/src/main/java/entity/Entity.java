@@ -44,8 +44,8 @@ public abstract class Entity {
 	}
 	
 	/**
-	 * The setMap method.
-	 * Defines the map on which the entity evolves.
+	 * The setGame method.
+	 * Defines the game on which the entity evolves.
 	 * @param map the new map
 	 */
 	public void setGame(Game game) {
@@ -53,8 +53,8 @@ public abstract class Entity {
 	}
 	
 	/**
-	 * The getMap method.
-	 * @return the map on which the entity evolves
+	 * The getGame method.
+	 * @return the game on which the entity evolves
 	 */
 	public Game getGame() {
 		return this.game;

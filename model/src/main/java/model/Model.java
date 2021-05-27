@@ -33,9 +33,9 @@ public final class Model extends Observable implements IModel {
 	}
 
 	/**
-     * Gets the map.
+     * Gets the game.
      *
-     * @return map
+     * @return game
      */
 	/*
 	 * (non-Javadoc)
@@ -47,10 +47,10 @@ public final class Model extends Observable implements IModel {
 	}
 
 	/**
-     * Sets the map
+     * Sets the game
      *
-     * @param map
-     *            the new map
+     * @param game
+     *            the new game
      */
 	private void setGame(final Game game) {
 		this.game = game;
@@ -58,10 +58,10 @@ public final class Model extends Observable implements IModel {
 	}
 
 	/**
-     * Load the map
+     * Load the game
      *
      * @param id
-     *            the id of the map
+     *            the id of the game
      */
 	/*
 	 * (non-Javadoc)
@@ -110,7 +110,7 @@ public final class Model extends Observable implements IModel {
 	
 	/**
 	 * The loop method.
-	 * Executes the map loop and notify observers.
+	 * Executes the game loop and notify observers.
 	 * @throws LineUnavailableException 
 	 * @throws IOException 
 	 * @throws UnsupportedAudioFileException 
