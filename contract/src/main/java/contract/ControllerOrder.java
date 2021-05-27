@@ -33,4 +33,5 @@ public enum ControllerOrder {
 	Game5,
 	/** The Else button. */
 	Else,
+	Exit,
 }
